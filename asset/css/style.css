@@ -741,6 +741,12 @@
     margin-bottom: 0.375em;
   }
 
+  .property .value .language {
+    background-color: #d1d1d1;
+    padding: 0.375em;
+    font-size: 10px;
+  }
+
   #content .media.resource {
     display: inline-block;
     text-align: center;

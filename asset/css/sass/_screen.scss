@@ -729,6 +729,12 @@ body.resource #content > h2:first-of-type + h3 {
     margin-bottom: rhythm(.25);
 }
 
+.property .value .language {
+    background-color: lighten($gray, 15%);
+    padding: rhythm(.125, .5 * $base-font-size);
+    font-size: .5 * $base-font-size;
+}
+
 #content .media.resource {
     display: inline-block;
     text-align: center;
