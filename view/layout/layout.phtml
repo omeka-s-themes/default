@@ -25,7 +25,7 @@ $this->trigger('view.layout');
             <a href="<?php echo $site->url(); ?>" class="site-title"><?php echo $this->pageTitle($site->title()); ?></a>
             <nav>
             <?php
-            echo $this->navigation('Zend\Navigation\Site')->menu()->renderMenu(null, [
+            echo $site->publicNav()->menu()->renderMenu(null, [
                 'maxDepth' => $this->themeSetting('nav_depth') - 1
             ]);
             ?>
