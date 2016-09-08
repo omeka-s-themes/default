@@ -57,6 +57,10 @@ img {
 
 /* @group ----- Forms ----- */
 
+form {
+    margin: rhythm() 0;
+}
+
 input,
 textarea,
 button,
@@ -72,7 +76,8 @@ select {
 input[type="text"],
 input[type="password"],
 input[type="email"],
-input[type="url"] {
+input[type="url"],
+textarea {
     @include appearance(none);
     @include border-radius(0px);
     height: rhythm(1.5);
@@ -80,6 +85,16 @@ input[type="url"] {
     @include rhythm-borders(1px, 0, $base-font-size, solid);
     padding: rhythm(.25) gutter();
     margin: 0;
+}
+
+textarea {
+    height: rhythm(3);
+}
+
+input[type="file"] {
+    line-height: 1;
+    vertical-align: bottom;
+    font-size: .75 * $base-font-size;
 }
 
 button,
@@ -136,6 +151,22 @@ select {
 .field .inputs {
     width: 70%;
     padding-left: gutter();
+
+    select,
+    textarea,
+    input {
+        width: 100%;
+    }
+
+    input[type="checkbox"] {
+        vertical-align: bottom;
+    }
+}
+
+.field.required .field-meta:after {
+    content: "\f069";
+    font-family: "FontAwesome";
+    font-size: .75 * $base-font-size;
 }
 
 .field .value:not(:last-child) {

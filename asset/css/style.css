@@ -57,6 +57,10 @@
   }
 
   /* @group ----- Forms ----- */
+  form {
+    margin: 1.5em 0;
+  }
+
   input,
   textarea,
   button,
@@ -72,7 +76,8 @@
   input[type="text"],
   input[type="password"],
   input[type="email"],
-  input[type="url"] {
+  input[type="url"],
+  textarea {
     -moz-appearance: none;
     -webkit-appearance: none;
     -moz-border-radius: 0px;
@@ -85,6 +90,16 @@
     padding: -0.05em;
     padding: 0.375em 1.69492%;
     margin: 0;
+  }
+
+  textarea {
+    height: 4.5em;
+  }
+
+  input[type="file"] {
+    line-height: 1;
+    vertical-align: bottom;
+    font-size: 15px;
   }
 
   button,
@@ -143,6 +158,20 @@
   .field .inputs {
     width: 70%;
     padding-left: 1.69492%;
+  }
+  .field .inputs select,
+  .field .inputs textarea,
+  .field .inputs input {
+    width: 100%;
+  }
+  .field .inputs input[type="checkbox"] {
+    vertical-align: bottom;
+  }
+
+  .field.required .field-meta:after {
+    content: "\f069";
+    font-family: "FontAwesome";
+    font-size: 15px;
   }
 
   .field .value:not(:last-child) {
