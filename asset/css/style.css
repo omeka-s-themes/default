@@ -57,10 +57,6 @@
   }
 
   /* @group ----- Forms ----- */
-  form {
-    margin: 1.5em 0;
-  }
-
   input,
   textarea,
   button,
