@@ -155,12 +155,7 @@
     width: 70%;
     padding-left: 1.69492%;
   }
-  .field .inputs select,
-  .field .inputs textarea,
-  .field .inputs input[type="text"],
-  .field .inputs input[type="password"],
-  .field .inputs input[type="email"],
-  .field .inputs input[type="url"] {
+  .field .inputs > select, .field .inputs > textarea, .field .inputs > input[type="text"], .field .inputs > input[type="password"], .field .inputs > input[type="email"], .field .inputs > input[type="url"] {
     width: 100%;
   }
   .field .inputs input[type="checkbox"] {

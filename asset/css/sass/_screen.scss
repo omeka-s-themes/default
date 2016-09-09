@@ -148,12 +148,12 @@ select {
     width: 70%;
     padding-left: gutter();
 
-    select,
-    textarea,
-    input[type="text"],
-    input[type="password"],
-    input[type="email"],
-    input[type="url"] {
+    & > select,
+    & > textarea,
+    & > input[type="text"],
+    & > input[type="password"],
+    & > input[type="email"],
+    & > input[type="url"] {
         width: 100%;
     }
 
