@@ -17,3 +17,17 @@ $bg:                                    lighten($gray, 30%);
 
 $base-font-size:                        20px;
 $base-line-height:                      30px;
+
+// Units
+
+$spacing-s:                             .25 * $base-line-height;
+$spacing-m:                             .5 * $base-line-height;
+$spacing-l:                             $base-line-height;
+
+// Mixins
+
+@mixin container {
+    max-width: 1700px;
+    margin-left: auto;
+    margin-right: auto;
+}

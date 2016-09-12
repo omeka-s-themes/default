@@ -6,7 +6,7 @@
 
 header {
     position: relative;
-    padding: rhythm(.5) 0 0 0;
+    padding: $spacing-m 0 0 0;
 }
 
 header > * {
@@ -64,7 +64,7 @@ header nav ul.navigation {
     }
 
     & > li:not(:last-child) {
-        margin-right: rhythm(.5);
+        margin-right: $spacing-m;
     }
 
     & > li > ul {
@@ -75,9 +75,9 @@ header nav ul.navigation {
         padding: 0;
         list-style: none;
         width: 100%;
-        border-color: $gray;
-        @include leading-border(1px, .5, $base-font-size, solid);
-        @include trailing-border(1px, .25, $base-font-size, solid);
+        border: solid $gray;
+        border-width: 1px 0;
+        padding: ($spacing-m - 1px) 0 ($spacing-s - 1px);
         display: flex;
         flex-direction: row;
         flex-flow: row wrap;
@@ -86,7 +86,7 @@ header nav ul.navigation {
 
     & > li:hover > ul {
         @include container;
-        padding: rhythm(.5) (2 * gutter());
+        padding: $spacing-m (2 * gutter());
         left: 0;
         right: 0;
         border-bottom: 0;
@@ -120,7 +120,7 @@ header nav ul.navigation {
 }
 
 header nav > ul > li > a {
-    margin: rhythm(.25);
+    margin: $spacing-s;
     height: $base-line-height;
 }
 
@@ -129,7 +129,7 @@ header nav > ul > li > a:not(:only-child):after {
     font-family: "FontAwesome";
     content: "\f107";
     display: inline-block;
-    margin-left: rhythm(.25);
+    margin-left: $spacing-s;
 }
 
 header nav > ul li:hover ul li {
@@ -143,15 +143,15 @@ header nav > ul > li > ul > li > ul > li a {
 }
 
 .sub-menu ul {
-    border-color: $light;
-    @include trailing-border(1px, .5, $base-font-size, solid);
+    border-bottom: 1px solid $light;
+    padding-bottom: ($spacing-m - 1px);
 }
 
 .sub-menu li {
     display: inline-block;
     border: 0;
     padding: 0;
-    margin-right: rhythm(.5, .75 * $base-font-size);
+    margin-right: $spacing-m;
 
     &:first-of-type {
         border: 0;
@@ -164,14 +164,14 @@ header nav > ul > li > ul > li > ul > li a {
 /* @group ----- Resource List ----- */
 
 ul.resource-list .resource img {
-    width: rhythm(4);
+    width: 4 * $spacing-l;
     height: auto;
     float: right;
-    margin-left: rhythm(.5);
+    margin-left: $spacing-m;
 }
 
 ul.resource-list .resource img ~ * {
-    width: calc(100% - #{rhythm(4.5)});
+    width: calc(100% - #{4.5 * $spacing-l});
 }
 
 /* @end */
@@ -198,7 +198,7 @@ body.item-set .metadata ~ * {
 body.item-set .metadata ~ h3,
 body.item-set .metadata ~ .resource-list {
     margin: 0;
-    padding-bottom: rhythm(1, 1.25 * $base-font-size);
+    padding-bottom: $spacing-l;
 }
 
 body.item-set .metadata ~ nav.pagination:first-of-type {
@@ -214,7 +214,8 @@ body.item-set .metadata ~ nav.pagination:first-of-type {
 }
 
 ul.preview.resource-list li:first-of-type {
-    @include leading-border(1px, 1, $base-font-size, solid);
+    border-top: 1px solid;
+    padding-top: ($spacing-l - 1px);
 }
 
 /* @end */

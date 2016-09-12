@@ -74,17 +74,16 @@ input[type="password"],
 input[type="email"],
 input[type="url"],
 textarea {
-    @include appearance(none);
-    @include border-radius(0px);
-    height: rhythm(1.5);
-    border-color: $light;
-    @include rhythm-borders(1px, 0, $base-font-size, solid);
-    padding: rhythm(.25) gutter();
+    appearance: none;
+    border-radius: 0;
+    height: 1.5 * $spacing-l;
+    border: 1px solid $light;
+    padding: ($spacing-s - 1px) gutter();
     margin: 0;
 }
 
 textarea {
-    height: rhythm(3);
+    height: 3 * $spacing-l;
 }
 
 input[type="file"] {
@@ -98,7 +97,7 @@ button,
 [type="submit"] {
     background-color: $light;
     border-radius: 2px;
-    padding: rhythm(.25);
+    padding: $spacing-s;
     display: inline-block;
     appearance: none;
     -webkit-appearance: none;
@@ -108,9 +107,9 @@ button,
 
 select {
     background-color: #fff;
-    padding: rhythm(.25);
+    padding: $spacing-s;
     border-color: $light;
-    height: rhythm(1.5);
+    height: 1.5 * $spacing-l;
 }
 
 ::-webkit-input-placeholder {
@@ -130,7 +129,7 @@ select {
 }
 
 .field {
-    margin: rhythm() 0;
+    margin: $spacing-l 0;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -141,7 +140,7 @@ select {
 
 .field .field-meta {
     width: 30%;
-    padding: rhythm(.25) gutter() 0 0;
+    padding: $spacing-s gutter() 0 0;
 }
 
 .field .inputs {
@@ -169,7 +168,7 @@ select {
 }
 
 .field .value:not(:last-child) {
-    margin-bottom: rhythm(.5);
+    margin-bottom: $spacing-m;
 }
 
 .field-description {
@@ -182,7 +181,7 @@ select {
 
 header nav {
     position: relative;
-    margin: rhythm(.5) 0 rhythm(-.5);
+    margin: $spacing-m 0 -$spacing-m;
 }
 
 header nav.closed ul {
@@ -195,14 +194,14 @@ header nav:before {
     font-family: "FontAwesome";
     content: "\f0c9";
     display: block;
-    width: rhythm(1.25);
-    height: rhythm(1.25);
+    width: 1.25 * $spacing-l;
+    height: 1.25 * $spacing-l;
     border: 1px solid $light;
     text-align: center;
     border-radius: 2px;
     position: absolute;
     right: gutter();
-    top: rhythm(-2.25);
+    top: -(2.25 * $spacing-l);
     cursor: pointer;
     line-height: 1.25 * $base-line-height;
 }
@@ -220,7 +219,7 @@ header nav ul {
     a {
         display: inline-block;
         width: 100%;
-        padding: rhythm(.25);
+        padding: $spacing-s;
     }
 
     a:hover {
@@ -229,8 +228,8 @@ header nav ul {
     }
 
     li {
-        border-color: $light;
-        @include leading-border(1px, 0, $base-font-size, solid);
+        border-top: 1px solid $light;
+        padding-top: ($spacing-l - 1px);
         position: relative;
     }
 
@@ -247,10 +246,10 @@ header nav ul {
         content: "\f105";
         position: absolute;
         right: 0;
-        top: rhythm(-1.5);
+        top: -(1.5 * $spacing-l);
         color: $light;
-        width: rhythm();
-        height: rhythm(1.5);
+        width: $spacing-l;
+        height: 1.5 * $spacing-l;
         line-height: 1.5 * $base-line-height;
         text-align: center;
     }
@@ -265,7 +264,8 @@ header nav ul {
 }
 
 header nav > ul > li:last-child {
-    @include trailing-border(1px, 0, $base-font-size, solid);
+    border-bottom: 1px solid;
+    padding-bottom: -1px;
 }
 
 header nav > ul ul li {
@@ -276,8 +276,8 @@ header nav > ul ul li {
 
 header nav > ul ul:hover > li {
     height: auto;
-    border-color: $light;
-    @include leading-border(1px, 0, $base-font-size, solid);
+    border-top: 1px solid $light;
+    padding-top: -1px;
 }
 
 /* Second level items */
@@ -292,34 +292,34 @@ header nav > ul > li > ul > li.active > a:before {
 }
 
 header nav > ul > li > ul > li a {
-    padding-left: rhythm();
+    padding-left: $spacing-l;
 }
 
 /* Third level items */
 header nav > ul > li > ul > li > ul > li a {
-    padding-left: rhythm(2);
+    padding-left: 2 * $spacing-l;
 }
 
 .sub-menu ul {
     padding-left: 0;
     list-style-type: none;
-    margin-top: rhythm(.5);
+    margin-top: $spacing-m;
 }
 
 .sub-menu li {
-    border-color: $light;
     font-size: .75 * $base-font-size;
     font-weight: bold;
-    @include trailing-border(1px, .25, .75 * $base-font-size, solid);
-    padding-top: rhythm(.25, .75 * $base-font-size);
+    border-bottom: 1px solid $light;
+    padding: $spacing-s 0 ($spacing-s - 1px);
 
     &:first-of-type {
-        @include leading-border(1px, .25, .75 * $base-font-size, solid);
+        border-top: 1px solid $light;
+        padding-top: ($spacing-s - 1px);
     }
 }
 
 nav.pagination {
-    margin-bottom: rhythm();
+    margin-bottom: $spacing-l;
     font-size: $base-font-size;
     line-height: 1.5 * $base-line-height;
 }
@@ -333,7 +333,7 @@ nav.pagination {
 }
 
 .pagination form {
-    min-width: rhythm(3);
+    min-width: 3 * $spacing-l;
 }
 
 .pagination form,
@@ -348,9 +348,9 @@ nav.pagination {
 .pagination .button {
     border: 1px solid $light;
     background-color: $light;
-    width: rhythm(1.5);
+    width: 1.5 * $spacing-l;
     text-align: center;
-    padding: rhythm(.25);
+    padding: $spacing-s;
     border-radius: 2px;
     color: $gray;
     line-height: $base-line-height;
@@ -371,16 +371,16 @@ nav.pagination {
 
 .pagination form,
 .pagination .last {
-    margin-right: rhythm(.25);
+    margin-right: $spacing-s;
 }
 
 .pagination input {
-    width: rhythm(2);
+    width: 2 * $spacing-l;
 }
 
 .breadcrumbs {
     font-size: .75 * $base-font-size;
-    margin: rhythm(1, .75 * $base-font-size) 0 rhythm(-.5, .75 * $base-font-size);
+    margin: $spacing-l 0 -$spacing-m;
 }
 
 /* @end */
@@ -390,9 +390,9 @@ nav.pagination {
 header {
     background-color: #fff;
     margin-top: 0;
-    border-color: $light;
-    padding-top: rhythm(.5);
-    @include trailing-border(1px, .5, $base-font-size, solid);
+    padding-top: $spacing-m;
+    border-bottom: 1px solid $light;
+    padding-bottom: ($spacing-m - 1px);
 
     & > * {
         @include container;
@@ -416,14 +416,14 @@ header {
 
 #content {
     @include container;
-    padding: 0 gutter() rhythm();
+    padding: 0 gutter() $spacing-l;
 }
 
 .item-showcase {
-    margin: rhythm() 0;
-    border-color: $light;
-    @include leading-border(1px, 1, $base-font-size, solid);
-    @include trailing-border(1px, 0, $base-font-size, solid);
+    margin: $spacing-l 0;
+    border-top: 1px solid $light;
+    border-bottom: 1px solid $light;
+    padding: ($spacing-s - 1px) 0 -1px 0;
     overflow: hidden;
     text-align: center;
     clear: both;
@@ -434,7 +434,7 @@ header {
     line-height: $base-line-height;
 
     * {
-        margin: 0 0 rhythm(1, .75 * $base-font-size) 0;
+        margin: 0 0 $spacing-l 0;
     }
 
     & > *:last-child {
@@ -447,11 +447,11 @@ header {
     vertical-align: top;
 
     &:not(:last-child) {
-        margin-bottom: rhythm();
+        margin-bottom: $spacing-l;
     }
 
     img {
-        margin-right: rhythm(.5);
+        margin-right: $spacing-m;
     }
 
     &:only-child img {
@@ -468,11 +468,11 @@ header {
         clear: left;
         font-size: .75 * $base-font-size;
         line-height: $base-line-height;
-        margin: rhythm(.5, .75 * $base-font-size) 0 0;
+        margin: $spacing-m 0 0;
     }
 
     &:not(:only-child) img {
-        max-height: rhythm(7);
+        max-height: 7 * $spacing-l;
         width: auto;
         float: none;
         margin-right: 0;
@@ -487,20 +487,21 @@ header {
 
 .left .item.resource,
 .right .item.resource {
-    border-color: $light;
-    margin: 0 0 rhythm() 0;
+    margin: 0 0 $spacing-l 0;
     width: -webkit-min-content;
     width: -moz-min-content;
     width: min-content;
     max-width: 40vw;
 
     &:first-of-type {
-        @include leading-border(1px, 1, $base-font-size, solid);
+        border-top: 1px solid $light;
+        padding-top: ($spacing-l - 1px);
         margin-top: 0;
     }
 
     &:last-of-type {
-        @include trailing-border(1px, 1, $base-font-size, solid);
+        border-bottom: 1px solid $light;
+        padding-bottom: ($spacing-l - 1px);
     }
 
     .media-render > *, img {
@@ -536,13 +537,13 @@ header {
 
 .left .item.resource {
     float: left;
-    margin-right: rhythm();
+    margin-right: $spacing-l;
     clear: left;
 }
 
 .right .item.resource {
     float: right;
-    margin-left: rhythm();
+    margin-left: $spacing-l;
     clear: right;
 }
 
@@ -570,8 +571,9 @@ header {
 .break {
     width: 100%;
     clear: both;
-    @include trailing-border(1px, 0, $base-font-size, solid);
-    margin: rhythm() 0;
+    border-bottom: 1px solid $light;
+    padding-bottom: -1px;
+    margin: $spacing-l 0;
 
     &.transparent {
         border-color: transparent;
@@ -583,14 +585,14 @@ header {
 }
 
 .preview-block {
-    margin: rhythm() 0;
+    margin: $spacing-l 0;
     overflow: hidden;
 }
 
 .resource-list.preview + a {
     background-color: $light;
     text-align: center;
-    padding: rhythm(.25);
+    padding: $spacing-s;
     border-radius: 2px;
     color: $gray;
     line-height: $base-line-height;
@@ -604,13 +606,13 @@ header {
 }
 
 .toc-block > ul {
-    margin: rhythm(1, .75 * $base-font-size) 0;
+    margin: $spacing-l 0;
     list-style-type: none;
     border-left: 5px solid $gray;
 }
 
 .toc-block > ul > li {
-    margin-bottom: rhythm(.5);
+    margin-bottom: $spacing-m;
 }
 
 .toc-block > ul > li > a {
@@ -645,9 +647,9 @@ ul.resource-list {
 }
 
 ul.resource-list .resource {
-    border-color: $light;
-    @include trailing-border(1px, 1, $base-font-size, solid);
-    margin: rhythm() 0;
+    border-bottom: 1px solid $light;
+    padding-bottom: ($spacing-l - 1px);
+    margin: $spacing-l 0;
     overflow: hidden;
     position: relative;
 
@@ -656,15 +658,16 @@ ul.resource-list .resource {
     }
 
     &:first-child {
-        @include leading-border(1px, 1, $base-font-size, solid);
+        border-top: 1px solid $light;
+        padding-top: ($spacing-l - 1px);
     }
 }
 
 ul.resource-list .resource img {
     height: auto;
-    width: rhythm(2);
+    width: 2 * $spacing-l;
     float: right;
-    margin-left: rhythm(.5);
+    margin-left: $spacing-m;
 }
 
 ul.resource-list .resource h4 {
@@ -672,23 +675,23 @@ ul.resource-list .resource h4 {
 }
 
 ul.resource-list .resource .description {
-    max-height: rhythm(3);
+    max-height: 3 * $spacing-l;
     overflow: hidden;
     position: relative;
 
     &:after {
         content: "";
         position: absolute;
-        top: rhythm(1.75);
+        top: 1.75 * $spacing-l;
         left: 0;
         right: 0;
-        height: rhythm(1.25);
+        height: 1.25 * $spacing-l;
         background: linear-gradient(to top, rgba(248,248,248,1), rgba(248,248,248,0));
     }
 }
 
 ul.resource-list .resource img ~ * {
-    width: calc(100% - #{rhythm(2.5)});
+    width: calc(100% - #{2.5 * $spacing-l});
 }
 
 /* @end */
@@ -696,14 +699,14 @@ ul.resource-list .resource img ~ * {
 /* @group ----- Browse ---- */
 
 .search-filters {
-    margin-bottom: rhythm();
+    margin-bottom: $spacing-l;
 }
 
 .filter-label,
 .filter-value {
     display: inline-block;
-    border-color: $light;
-    @include rhythm-borders(1px, .25, $base-font-size, solid);
+    border: 1px solid $light;
+    padding: ($spacing-s - 1px);
 }
 
 .filter-label {
@@ -716,7 +719,7 @@ ul.resource-list .resource img ~ * {
 
 .advanced-search {
     float: right;
-    margin: rhythm(.25) 0;
+    margin: $spacing-s 0;
 }
 
 /* @end */
@@ -726,11 +729,11 @@ ul.resource-list .resource img ~ * {
 body.resource #content > h2:first-of-type + h3 {
     font-size: .75 * $base-font-size;
     text-transform: uppercase;
-    margin: rhythm(-1, .75 * $base-font-size) 0 rhythm(1, .75 * $base-font-size);
+    margin: -$spacing-l 0 $spacing-l;
 }
 
 .property {
-    margin-bottom: rhythm();
+    margin-bottom: $spacing-l;
 }
 
 .property h4 {
@@ -740,10 +743,10 @@ body.resource #content > h2:first-of-type + h3 {
 
 .property .value img {
     width: auto;
-    height: rhythm(1.5);
+    height: 1.5 * $spacing-l;
     display: inline-block;
     vertical-align: middle;
-    margin-right: rhythm(.25);
+    margin-right: $spacing-s;
 }
 
 .property .value a {
@@ -752,16 +755,16 @@ body.resource #content > h2:first-of-type + h3 {
 }
 
 .property .value:not(:last-child) img {
-    margin-bottom: rhythm(.25);
+    margin-bottom: $spacing-s;
 }
 
 .property .value:not(:last-child) img + a {
-    margin-bottom: rhythm(.25);
+    margin-bottom: $spacing-s;
 }
 
 .property .value .language {
     background-color: lighten($gray, 15%);
-    padding: rhythm(.125, .5 * $base-font-size);
+    padding: .5 * $spacing-s;
     font-size: .5 * $base-font-size;
 }
 
@@ -769,7 +772,7 @@ body.resource #content > h2:first-of-type + h3 {
     display: inline-block;
     text-align: center;
     vertical-align: bottom;
-    margin-right: rhythm(.25);
+    margin-right: $spacing-s;
 
     &:hover {
         border-bottom: 0;
@@ -778,7 +781,7 @@ body.resource #content > h2:first-of-type + h3 {
 
 #content .media.resource img {
     vertical-align: top;
-    margin-bottom: rhythm(.5);
+    margin-bottom: $spacing-m;
 }
 
 .media-render > * {
@@ -790,7 +793,7 @@ body.resource #content > h2:first-of-type + h3 {
 /* @group ----- Advanced Search ----- */
 
 #advanced-search .value:not(:last-child) {
-    margin-bottom: rhythm(.5);
+    margin-bottom: $spacing-m;
 }
 
 /* @end */
