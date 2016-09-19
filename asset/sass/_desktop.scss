@@ -109,6 +109,7 @@ header nav ul.navigation {
         width: 25%;
         font-size: .75 * $base-font-size;
         font-weight: bold;
+        padding-bottom: $spacing-l;
     }
 
     & > li > ul > li ul {
@@ -134,6 +135,7 @@ header nav > ul > li > a:not(:only-child):after {
 
 header nav > ul li:hover ul li {
     height: auto;
+    padding: 0;
 }
 
 /* Second and Third level items */
@@ -214,7 +216,7 @@ body.item-set .metadata ~ nav.pagination:first-of-type {
 }
 
 ul.preview.resource-list li:first-of-type {
-    border-top: 1px solid;
+    border-top: 1px solid $light;
     padding-top: ($spacing-l - 1px);
 }
 

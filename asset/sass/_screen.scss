@@ -93,7 +93,7 @@ input[type="file"] {
 }
 
 button,
-.button,
+a.button,
 [type="submit"] {
     background-color: $light;
     border-radius: 2px;
@@ -103,6 +103,7 @@ button,
     -webkit-appearance: none;
     -moz-appearance: none;
     border: 0;
+    cursor: pointer;
 }
 
 select {
@@ -423,7 +424,8 @@ header {
     margin: $spacing-l 0;
     border-top: 1px solid $light;
     border-bottom: 1px solid $light;
-    padding: ($spacing-s - 1px) 0 -1px 0;
+    padding: -1px 0;
+    padding-top: $spacing-l - 1px;
     overflow: hidden;
     text-align: center;
     clear: both;
@@ -594,7 +596,6 @@ header {
     text-align: center;
     padding: $spacing-s;
     border-radius: 2px;
-    color: $gray;
     line-height: $base-line-height;
     display: inline-block;
     font-weight: bold;
@@ -602,6 +603,7 @@ header {
     &:hover {
         background-color: $bold;
         border-bottom-width: 0px;
+        color: #fff;
     }
 }
 
