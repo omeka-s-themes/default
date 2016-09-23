@@ -182,7 +182,8 @@ select {
 
 header nav {
     position: relative;
-    margin: $spacing-m 0 -$spacing-m;
+    margin: $spacing-m 0 (-$spacing-m);
+    padding: 0;
 }
 
 header nav.closed ul {
@@ -202,7 +203,7 @@ header nav:before {
     border-radius: 2px;
     position: absolute;
     right: gutter();
-    top: -(2.25 * $spacing-l);
+    top: -(1.75 * $spacing-l);
     cursor: pointer;
     line-height: 1.25 * $base-line-height;
 }
@@ -230,7 +231,6 @@ header nav ul {
 
     li {
         border-top: 1px solid $light;
-        padding-top: ($spacing-l - 1px);
         position: relative;
     }
 
@@ -265,7 +265,7 @@ header nav ul {
 }
 
 header nav > ul > li:last-child {
-    border-bottom: 1px solid;
+    border-bottom: 1px solid $light;
     padding-bottom: -1px;
 }
 
@@ -381,19 +381,26 @@ nav.pagination {
 
 .breadcrumbs {
     font-size: .75 * $base-font-size;
-    margin: $spacing-l 0 -$spacing-m;
+    margin: $spacing-l 0 (-$spacing-m);
 }
 
 /* @end */
 
 /* @group ----- Header ----- */
 
+.site-title h1 {
+    font-size: 1.25 * $base-font-size;
+    line-height: $base-line-height;
+    padding-right: $base-line-height;
+}
+
 header {
     background-color: #fff;
-    margin-top: 0;
+    margin: 0 0 (2.5 * $spacing-l);
     padding-top: $spacing-m;
     border-bottom: 1px solid $light;
     padding-bottom: ($spacing-m - 1px);
+    position: relative;
 
     & > * {
         @include container;
@@ -411,6 +418,50 @@ header {
     margin: 0;
 }
 
+button.o-icon-search {
+    display: none;
+}
+
+#search {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    border-bottom: 1px solid $light;
+    border-top: 1px solid $light;
+    padding: $spacing-s gutter();
+}
+
+#search form {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#search form input[type="text"] {
+    width: 100%;
+}
+
+#search form button[type="submit"] {
+    height: 1.5 * $base-line-height;
+    width: 1.5 * $base-line-height;
+    text-indent: -9999px;
+    position: relative;
+    border-radius: 0 3px 3px 0;
+
+    &:before {
+        content: "\f002";
+        font-family: "FontAwesome";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        text-indent: 0;
+        line-height: 1.5 * $base-line-height;
+    }
+}
+
 /* @end */
 
 /* @group ----- Page and Blocks ----- */
@@ -424,11 +475,12 @@ header {
     margin: $spacing-l 0;
     border-top: 1px solid $light;
     border-bottom: 1px solid $light;
-    padding: -1px 0;
-    padding-top: $spacing-l - 1px;
+    padding: ($spacing-l - 1px) 0 0;
     overflow: hidden;
     text-align: center;
     clear: both;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .item.resource .caption {
@@ -445,12 +497,8 @@ header {
 }
 
 .item-showcase .resource.item {
-    display: inline-block;
     vertical-align: top;
-
-    &:not(:last-child) {
-        margin-bottom: $spacing-l;
-    }
+    margin-bottom: $spacing-l;
 
     img {
         margin-right: $spacing-m;
@@ -494,6 +542,7 @@ header {
     width: -moz-min-content;
     width: min-content;
     max-width: 40vw;
+    word-break: break-all;
 
     &:first-of-type {
         border-top: 1px solid $light;

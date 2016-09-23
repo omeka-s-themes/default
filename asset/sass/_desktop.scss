@@ -7,6 +7,7 @@
 header {
     position: relative;
     padding: $spacing-m 0 0 0;
+    margin-bottom: 2 * $spacing-l;
 }
 
 header > * {
@@ -18,8 +19,9 @@ header > * {
 /* @group ----- Navigation ----- */
 
 header nav {
-    margin: 0 auto;
+    margin: $spacing-m auto 0;
     position: static;
+    padding: 0 (2 * gutter());
 }
 
 header nav:before {
@@ -52,7 +54,7 @@ header nav > ul ul:hover > li {
 }
 
 header nav ul.navigation {
-    margin: 0 auto;
+    margin-left: -$spacing-s;
     position: static;
 
     li ul:before {
@@ -158,6 +160,29 @@ header nav > ul > li > ul > li > ul > li a {
     &:first-of-type {
         border: 0;
         padding: 0;
+    }
+}
+
+#search {
+    left: 75%;
+    border-left: 1px solid $light;
+    padding: $spacing-s;
+}
+
+#search form input[type="text"],
+#search form button[type="submit"] {
+    height: $base-line-height;
+    font-size: .75 * $base-font-size;
+    line-height: $base-line-height;
+}
+
+#search form button[type="submit"] {
+    width: $base-line-height;
+    height: $base-line-height;
+    padding: 0;
+
+    &:before {
+        line-height: $base-line-height;
     }
 }
 
