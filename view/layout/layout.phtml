@@ -10,6 +10,11 @@ $this->headLink()->prependStylesheet('//fonts.googleapis.com/css?family=Open+San
 $this->headScript()->prependFile($this->assetUrl('js/default.js'));
 $this->headScript()->prependFile($this->assetUrl('js/jquery.js', 'Omeka'));
 $this->trigger('view.layout');
+$title = $this->pageTitle($site->title());
+$logo = $this->themeSettingAssetUrl('logo');
+if ($logo):
+    $title = '<img src="' . $this->escapeHtml($logo) . '">';
+endif;
 ?>
 <?php echo $this->doctype(); ?>
 <?php echo $this->htmlElement('html'); ?>
@@ -23,7 +28,9 @@ $this->trigger('view.layout');
 
     <?php echo $this->htmlElement('body'); ?>
         <header>
-            <a href="<?php echo $site->url(); ?>" class="site-title"><?php echo $this->pageTitle($site->title()); ?></a>
+            <a href="<?php echo $site->url(); ?>" class="site-title">
+                <?php echo $title; ?>
+            </a>
             <div id="search">
                 <form action="<?php echo $this->escapeHtml($this->url('site/resource', ['controller' => 'item','action' => 'browse'], true)); ?>" id="search-form">
                     <?php $searchValue = isset($_GET['property'][0]['in'][0]) ? $_GET['property'][0]['in'][0] : ''; ?>
