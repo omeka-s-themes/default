@@ -542,7 +542,6 @@ button.o-icon-search {
     width: -moz-min-content;
     width: min-content;
     max-width: 40vw;
-    word-break: break-all;
 
     &:first-of-type {
         border-top: 1px solid $light;
@@ -685,6 +684,7 @@ button.o-icon-search {
 }
 
 .site-page-pagination {
+    margin-top: 2 * $spacing-l;
     clear: both;
 }
 
