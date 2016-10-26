@@ -692,6 +692,10 @@ footer {
     color: $light;
 }
 
+.item-with-metadata .show.resource {
+    margin: (2 * $spacing-l) 0;
+}
+
 .site-page-pagination {
     margin-top: 2 * $spacing-l;
     clear: both;
@@ -854,6 +858,14 @@ body.resource #content > h2:first-of-type + h3 {
 
 #advanced-search .value:not(:last-child) {
     margin-bottom: $spacing-m;
+}
+
+/* @end */
+
+/* @group ----- Common Modules ---- */
+
+a.metadata-browse-link {
+    font-size: .75 * $base-font-size;
 }
 
 /* @end */
