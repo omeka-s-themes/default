@@ -464,6 +464,15 @@ button.o-icon-search {
 
 /* @end */
 
+/* @group ----- Footer ----- */
+
+footer {
+    @include container;
+    padding: 0 gutter() $spacing-l;
+}
+
+/* @end */
+
 /* @group ----- Page and Blocks ----- */
 
 #content {

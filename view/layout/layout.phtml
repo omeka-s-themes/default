@@ -51,5 +51,12 @@ endif;
         </header>
 
         <?php echo $this->content; ?>
+        <footer>
+            <?php if ($footerContent = $this->themeSetting('footer')): ?>
+            <?php echo $footerContent; ?>
+            <?php else: ?>
+                <?php echo $this->translate('Powered by Omeka S'); ?>
+            <?php endif; ?>
+        </footer>
     </body>
 </html>

@@ -16,6 +16,14 @@ header > * {
 
 /* @end */
 
+/* @group ----- Footer ----- */
+
+footer {
+    padding: 0 (2 * gutter()) $spacing-l;
+}
+
+/* @end */
+
 /* @group ----- Navigation ----- */
 
 header nav {
