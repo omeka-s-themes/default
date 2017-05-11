@@ -2,6 +2,19 @@
     padding: 0 (2 * gutter()) $spacing-l;
 }
 
+table {
+    margin: $spacing-l 0;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: left;
+    padding: $spacing-s $spacing-m;
+    padding-bottom: $spacing-s - 1px;
+    border-bottom: 1px solid $gray;
+}
+
 /* @group ----- Header ----- */
 
 header {
