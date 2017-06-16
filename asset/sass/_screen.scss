@@ -852,18 +852,6 @@ body.resource #content > h2:first-of-type + h3 {
     max-width: 100%;
 }
 
-.linked-property + ul {
-    margin-top: 0;
-    list-style: none;
-    padding-left: 0;
-}
-
-.linked-property + ul li:before {
-    content: "\2014";
-    display: inline-block;
-    margin-right: $spacing-s;
-}
-
 /* @end */
 
 /* @group ----- Advanced Search ----- */
