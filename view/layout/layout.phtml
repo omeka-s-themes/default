@@ -15,6 +15,12 @@ $logo = $this->themeSettingAssetUrl('logo');
 if ($logo):
     $title = '<img src="' . $this->escapeHtml($logo) . '">';
 endif;
+$currentUser = $this->identity();
+if ($currentUser) {
+    $this->headLink()->prependStylesheet($this->assetUrl('css/user-bar.css', 'Omeka'));
+    $this->headLink()->prependStylesheet($this->assetUrl('css/iconfonts.css', 'Omeka'));
+    $this->headLink()->prependStylesheet('//fonts.googleapis.com/css?family=Source+Code+Pro|Lato:400,400italic,700,700italic');
+}
 ?>
 <?php echo $this->doctype(); ?>
 <?php echo $this->htmlElement('html'); ?>
@@ -27,6 +33,9 @@ endif;
     </head>
 
     <?php echo $this->htmlElement('body'); ?>
+        <?php if ($currentUser): ?>
+            <?php echo $this->partial('common/user-bar', ['currentUser' => $currentUser, 'site' => $site]); ?>
+        <?php endif; ?>
         <header>
             <?php if ($this->themeSetting('logo')): ?>
             <a href="<?php echo $site->url(); ?>" class="site-title"><img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" title="Logo"></a>
