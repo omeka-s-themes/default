@@ -48,6 +48,7 @@ header nav {
 header nav:before {
     content: "";
     border: 0;
+    display: none;
 }
 
 header nav ul a {
