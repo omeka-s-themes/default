@@ -15,7 +15,7 @@ $logo = $this->themeSettingAssetUrl('logo');
 if ($logo):
     $title = '<img src="' . $this->escapeHtml($logo) . '">';
 endif;
-$userBar = ($this->identity()) ? $this->partial('common/user-bar', ['site' => $site]) : '';
+$userBar = $this->partial('common/user-bar', ['site' => $site]);
 ?>
 <?php echo $this->doctype(); ?>
 <?php echo $this->htmlElement('html'); ?>
