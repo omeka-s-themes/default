@@ -10,7 +10,7 @@ gulp.task('css', function () {
     return gulp.src('./asset/sass/*.scss')
         .pipe(sass({
             outputStyle: 'compressed',
-            includePaths: ['node_modules/susy/sass']
+            includePaths: ['../../node_modules/susy/sass']
         }).on('error', sass.logError))
         .pipe(postcss([
             autoprefixer({browsers: ['> 5%', '> 5% in US', 'last 2 versions']})
@@ -19,5 +19,5 @@ gulp.task('css', function () {
 });
 
 gulp.task('css:watch', function () {
-    gulp.watch('./asset/sass/*.scss', ['css']);
+    gulp.watch('./asset/sass/*.scss', gulp.parallel('css'));
 });
