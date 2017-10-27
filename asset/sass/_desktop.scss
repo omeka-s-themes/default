@@ -227,32 +227,43 @@ ul.resource-list .resource img ~ * {
 
 /* @group ----- Item Set ----- */
 
+body.item-set #content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    & > h2,
+    & > h3 {
+        width: 100%;
+    }
+}
+
 body.item-set .metadata {
-    @include span(4 of 12 alpha);
+    width: span(4 of 12 alpha);
     border-left: 5px solid $light;
     padding-left: gutter();
-    clear: left;
+    margin-right: gutter();
 }
 
 body.item-set .metadata h4:first-of-type {
     margin-top: 0;
 }
 
-body.item-set .metadata ~ * {
-    @include span(8 of 12 omega);
+body.item-set #content .metadata ~ * {
+    width: span(8 of 12 omega);
     border-left: 1px solid $light;
     padding-left: gutter();
 }
 
-body.item-set .metadata ~ h3,
-body.item-set .metadata ~ .resource-list {
-    margin: 0;
-    padding-bottom: $spacing-l;
+body.item-set .item-set-items h3 {
+    margin-top: 0;
 }
 
 body.item-set .metadata ~ nav.pagination:first-of-type {
     margin-bottom: 0;
 }
+
 
 /* @end */
 
