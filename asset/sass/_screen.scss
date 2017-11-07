@@ -805,7 +805,7 @@ body.resource #content > h2:first-of-type + h3 {
     font-size: .75 * $base-font-size;
 }
 
-.property .value img {
+.resource-link img {
     width: auto;
     height: 1.5 * $spacing-l;
     display: inline-block;
@@ -850,6 +850,21 @@ body.resource #content > h2:first-of-type + h3 {
 
 .media-render > * {
     max-width: 100%;
+}
+
+.resource-link {
+    margin-bottom: $spacing-l;
+    display: inline-block;
+}
+
+.resource-class {
+    background-color: lighten($gray, 15%);
+    padding: .5 * $spacing-s;
+    font-size: .75 * $base-font-size;
+}
+
+#linked-filter h4 {
+    margin-bottom: $spacing-m;
 }
 
 /* @end */
