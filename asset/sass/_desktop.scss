@@ -227,7 +227,7 @@ ul.resource-list .resource img ~ * {
 
 /* @group ----- Item Set ----- */
 
-body.item-set #content {
+body.item-set.item #content {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
