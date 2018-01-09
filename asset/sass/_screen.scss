@@ -852,19 +852,21 @@ body.resource #content > h2:first-of-type + h3 {
     max-width: 100%;
 }
 
-.resource-link {
-    margin-bottom: $spacing-l;
-    display: inline-block;
-}
-
-.resource-class {
-    background-color: lighten($gray, 15%);
-    padding: .5 * $spacing-s;
-    font-size: .75 * $base-font-size;
+#linked-resources caption {
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 3px solid $gray;
+    padding: $spacing-s $spacing-m ($spacing-s - 3px);
 }
 
 #linked-filter h4 {
     margin-bottom: $spacing-m;
+}
+
+#linked-resources .resource-link {
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
 }
 
 /* @end */
