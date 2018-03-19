@@ -151,7 +151,7 @@ header nav > ul > li > a {
 
 /* All top-level nav items with siblings are parent items and get an arrow. */
 header nav > ul > li > a:not(:only-child):after {
-    font-family: "FontAwesome";
+    font-family: "Font Awesome 5 Free";
     content: "\f107";
     display: inline-block;
     margin-left: $spacing-s;
