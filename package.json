@@ -22,7 +22,7 @@
   "homepage": "https://github.com/omeka-s-themes/default#readme",
   "devDependencies": {
     "autoprefixer": "^6.4.0",
-    "gulp": "^3.9.1",
+    "gulp": "github:gulpjs/gulp#4.0",
     "gulp-postcss": "^6.1.1",
     "gulp-sass": "^2.3.2",
     "susy": "^2.2.12"
