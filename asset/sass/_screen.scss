@@ -701,6 +701,18 @@ footer {
     clear: both;
 }
 
+.site-page-pagination a {
+    background-color: $light;
+    border-radius: 2px;
+    padding: $spacing-s;
+    display: inline-block;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 0;
+    cursor: pointer;
+}
+
 /* @end */
 
 /* @group ----- Resource List ----- */
