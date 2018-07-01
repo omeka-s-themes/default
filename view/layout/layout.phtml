@@ -25,7 +25,6 @@ $userBar = $this->partial('common/user-bar', ['site' => $site]);
         <?php echo $this->headTitle(); ?>
         <?php echo $this->headLink(); ?>
         <?php echo $this->headStyle(); ?>
-        <?php echo $this->headScript(); ?>
     </head>
 
     <?php echo $this->htmlElement('body'); ?>
@@ -58,5 +57,6 @@ $userBar = $this->partial('common/user-bar', ['site' => $site]);
                 <?php echo $this->translate('Powered by Omeka S'); ?>
             <?php endif; ?>
         </footer>
+        <?php echo $this->headScript(); ?>
     </body>
 </html>
