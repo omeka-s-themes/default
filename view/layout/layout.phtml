@@ -12,11 +12,11 @@ $this->headScript()->prependFile($this->assetUrl('js/global.js', 'Omeka'));
 $this->headScript()->prependFile($this->assetUrl('vendor/jquery/jquery.min.js', 'Omeka'));
 $this->trigger('view.layout');
 $title = $this->pageTitle($site->title());
+$userBar = $this->userBar();
 $logo = $this->themeSettingAssetUrl('logo');
 if ($logo):
     $title = '<img src="' . $this->escapeHtml($logo) . '">';
 endif;
-$userBar = $this->partial('common/user-bar', ['site' => $site]);
 ?>
 <?php echo $this->doctype(); ?>
 <?php echo $this->htmlElement('html'); ?>
