@@ -810,9 +810,14 @@ ul.resource-list .resource img ~ * {
     margin-left: -5px;
 }
 
+.browse-controls {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
 .advanced-search {
-    float: right;
-    margin: $spacing-s 0;
+    line-height: 1.5 * $base-line-height;
 }
 
 /* @end */
