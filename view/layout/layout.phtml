@@ -1,9 +1,11 @@
 <?php
 $escape = $this->plugin('escapeHtml');
+$siteTitle = $escape($site->title());
 $this->htmlElement('html')->setAttribute('lang', $this->lang());
 $this->headMeta()->setCharset('utf-8');
 $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1');
-$this->headTitle($this->setting('installation_title', 'Omeka S'))->setSeparator(' · ');
+$this->headTitle($siteTitle)->setSeparator(' · ');
+$this->headTitle()->append($this->setting('installation_title', 'Omeka S'));
 $this->headLink()->prependStylesheet($this->assetUrl('css/style.css'));
 $this->headLink()->prependStylesheet($this->assetUrl('css/iconfonts.css', 'Omeka'));
 $this->headLink()->prependStylesheet('//fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700italic,700');
@@ -11,12 +13,7 @@ $this->headScript()->prependFile($this->assetUrl('js/default.js'));
 $this->headScript()->prependFile($this->assetUrl('js/global.js', 'Omeka'));
 $this->headScript()->prependFile($this->assetUrl('vendor/jquery/jquery.min.js', 'Omeka'));
 $this->trigger('view.layout');
-$title = $this->pageTitle($site->title());
 $userBar = $this->userBar();
-$logo = $this->themeSettingAssetUrl('logo');
-if ($logo):
-    $title = '<img src="' . $this->escapeHtml($logo) . '">';
-endif;
 ?>
 <?php echo $this->doctype(); ?>
 <?php echo $this->htmlElement('html'); ?>
@@ -31,11 +28,15 @@ endif;
     <?php echo $this->htmlElement('body'); ?>
         <?php echo $userBar; ?>
         <header>
-            <?php if ($this->themeSetting('logo')): ?>
-            <a href="<?php echo $site->url(); ?>" class="site-title"><img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" title="Logo"></a>
-            <?php else: ?>
-            <a href="<?php echo $site->url(); ?>" class="site-title"><?php echo $this->pageTitle($site->title()); ?></a>
-            <?php endif; ?>
+            <h1>
+                <a href="<?php echo $site->url(); ?>" class="site-title">
+                <?php if ($this->themeSetting('logo')): ?>
+                    <img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" alt="<?php echo $siteTitle; ?>" />
+                <?php else: ?>
+                    <?php echo $siteTitle; ?>
+                <?php endif; ?>
+                </a>
+            </h1>
             <div id="search">
                 <?php echo $this->partial('common/search-form'); ?>
             </div>
