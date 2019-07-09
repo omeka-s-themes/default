@@ -19,16 +19,16 @@ body {
 
 a:link {
     text-decoration: none;
-    color: #000;
+    color: $link;
 }
 
 a:visited {
-    color: #000;
+    color: $link;
 }
 
 a:active,
 a:hover {
-    color: $bold;
+    color: lighten($link, 20%);
 }
 
 h1 {
@@ -849,7 +849,7 @@ body.resource #content > h2:first-of-type + h3 {
 
 .property .value a {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: bottom;
 }
 
 .property .value:not(:last-child) img {
