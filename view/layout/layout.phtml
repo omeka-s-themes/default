@@ -23,6 +23,21 @@ $userBar = $this->userBar();
         <?php echo $this->headLink(); ?>
         <?php echo $this->headStyle(); ?>
         <?php echo $this->headScript(); ?>
+        
+        <style>
+            <?php if ($accentColor = $this->themeSetting('accent_color')): ?>
+            a:link,
+            a:visited {
+                color: <?php echo $accentColor; ?>
+            }
+            
+            a:active,
+            a:hover {
+                color: <?php echo $accentColor; ?>;
+                opacity: .75;
+            }
+            <?php endif; ?>
+        </style>
     </head>
 
     <?php echo $this->htmlElement('body'); ?>
