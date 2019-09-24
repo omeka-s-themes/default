@@ -19,12 +19,16 @@ td {
 
 header {
     position: relative;
-    padding: $spacing-m 0 0 0;
+    padding: 0;
     margin-bottom: 2 * $spacing-l;
 }
 
 header > * {
     padding: 0 (2 * gutter());
+}
+
+header > h1 {
+    margin: $spacing-s auto;
 }
 
 /* @end */
@@ -40,7 +44,7 @@ footer {
 /* @group ----- Navigation ----- */
 
 header nav {
-    margin: $spacing-m auto 0;
+    margin: 0 auto;
     position: static;
     padding: 0 (2 * gutter());
 }
@@ -78,13 +82,11 @@ header nav > ul ul:hover > li {
 header nav ul.navigation {
     margin-left: -$spacing-s;
     position: static;
+    display: flex;
+    align-items: flex-end;
 
     li ul:before {
         display: none;
-    }
-
-    & > li {
-        display: inline-block;
     }
 
     & > li:not(:last-child) {
@@ -99,8 +101,6 @@ header nav ul.navigation {
         padding: 0;
         list-style: none;
         width: 100%;
-        border: solid $gray;
-        border-width: 1px 0;
         padding: ($spacing-m - 1px) 0 ($spacing-s - 1px);
         display: flex;
         flex-direction: row;
@@ -125,6 +125,7 @@ header nav ul.navigation {
             top: 0;
             bottom: 0;
             border-bottom: 1px solid $light;
+            border-top: 1px solid $light;
             z-index: -1;
         }
     }
@@ -146,7 +147,6 @@ header nav ul.navigation {
 
 header nav > ul > li > a {
     margin: $spacing-s;
-    height: $base-line-height;
 }
 
 /* All top-level nav items with siblings are parent items and get an arrow. */
