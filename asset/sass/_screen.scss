@@ -180,9 +180,12 @@ select {
 
 /* @group ----- Navigation ----- */
 
+header h1 {
+  margin: 0;
+}
+
 header nav {
     position: relative;
-    margin: $spacing-m 0 (-$spacing-m);
     padding: 0;
 }
 
@@ -203,9 +206,13 @@ header nav:before {
     border-radius: 2px;
     position: absolute;
     right: gutter();
-    top: -(1.75 * $spacing-l);
+    top: -(1.625 * $spacing-l);
     cursor: pointer;
     line-height: 1.25 * $base-line-height;
+}
+
+header nav.open {
+    margin: $spacing-m 0 -1px;
 }
 
 header nav.open:before {
@@ -395,11 +402,9 @@ nav.pagination {
 }
 
 header {
-    background-color: #fff;
     margin: 0 0 (2.5 * $spacing-l);
-    padding-top: $spacing-m;
+    background-color: #fff;
     border-bottom: 1px solid $light;
-    padding-bottom: ($spacing-m - 1px);
     position: relative;
 
     & > * {

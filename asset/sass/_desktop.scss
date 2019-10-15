@@ -43,6 +43,11 @@ footer {
 
 /* @group ----- Navigation ----- */
 
+header {
+    padding-top: $spacing-m;
+    padding-bottom: ($spacing-m - 1px);
+}
+
 header nav {
     margin: 0 auto;
     position: static;
