@@ -871,6 +871,12 @@ body.resource #content > h2:first-of-type + h3 {
     font-size: .5 * $base-font-size;
 }
 
+.property .private:after {
+    content: "\f070";
+    font-family: "Font Awesome 5 Free";
+    font-size: .75 * $base-font-size;
+}
+
 #content .media.resource {
     display: inline-block;
     text-align: center;
