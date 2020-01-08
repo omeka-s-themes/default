@@ -360,21 +360,14 @@ nav.pagination {
     text-align: center;
     padding: $spacing-s;
     border-radius: 2px;
-    color: $gray;
+    color: #000;
     line-height: $base-line-height;
-
-    &:hover {
-        background-color: $bold;
-    }
 }
 
 .pagination .inactive.button {
     opacity: .5;
+    color: $gray;
     background-color: white;
-
-    &:hover {
-        background-color: white;
-    }
 }
 
 .pagination form,
