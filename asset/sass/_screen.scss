@@ -248,18 +248,31 @@ header nav ul {
     li.active {
         font-weight: bold;
     }
+    
+    li.parent {
+        position: relative;
+    }
+    
+    .parent-link {
+      display: flex;
+    }
 
-    li > ul:before {
-        font-family: "Font Awesome 5 Free";
-        content: "\f105";
-        position: absolute;
-        right: 0;
-        top: -(1.5 * $spacing-l);
+    .parent-link > a {
+        width: calc(100% - #{2 * $spacing-l});
+    }
+    
+    .child-toggle {
         color: $light;
-        width: $spacing-l;
-        height: 1.5 * $spacing-l;
-        line-height: 1.5 * $base-line-height;
+        width: 2 * $spacing-l;
         text-align: center;
+        background-color: #fff;
+        border-left: 1px solid $light;
+        appearance: none;
+        
+        &:before {
+            font-family: "Font Awesome 5 Free";
+            content: "\f105";
+        }
     }
 
     li > ul:hover:before {
@@ -282,7 +295,7 @@ header nav > ul ul li {
     border: 0;
 }
 
-header nav > ul ul:hover > li {
+header nav ul.open > li {
     height: auto;
     border-top: 1px solid $light;
     padding-top: -1px;
@@ -306,6 +319,11 @@ header nav > ul > li > ul > li a {
 /* Third level items */
 header nav > ul > li > ul > li > ul > li a {
     padding-left: 2 * $spacing-l;
+}
+
+/* Fourth level items */
+header nav > ul > li > ul > li > ul > li > ul > li a {
+    padding-left: 3 * $spacing-l;
 }
 
 .sub-menu ul {

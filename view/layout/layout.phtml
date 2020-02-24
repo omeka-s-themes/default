@@ -12,6 +12,7 @@ $this->headLink()->prependStylesheet('//fonts.googleapis.com/css?family=Open+San
 $this->headScript()->prependFile($this->assetUrl('js/default.js'));
 $this->headScript()->prependFile($this->assetUrl('js/global.js', 'Omeka'));
 $this->headScript()->prependFile($this->assetUrl('vendor/jquery/jquery.min.js', 'Omeka'));
+$this->jsTranslate();
 $this->trigger('view.layout');
 $userBar = $this->userBar();
 ?>

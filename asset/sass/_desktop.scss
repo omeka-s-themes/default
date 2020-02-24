@@ -44,7 +44,7 @@ footer {
 /* @group ----- Navigation ----- */
 
 header nav {
-    margin: 0 auto;
+    margin: 0 auto !important;
     position: static;
     padding: 0 (2 * gutter());
 }
@@ -143,14 +143,28 @@ header nav ul.navigation {
         list-style-type: none;
         height: auto;
     }
+    
+    li.parent {
+        position: static;
+    }
 }
 
 header nav > ul > li > a {
     margin: $spacing-s;
 }
 
+header nav > ul > li > .parent-link {
+    display: inline-block;
+    width: 100%;
+}
+
+header nav > ul > li > .parent-link > a {
+    margin: $spacing-s;
+    width: 100%;
+}
+
 /* All top-level nav items with siblings are parent items and get an arrow. */
-header nav > ul > li > a:not(:only-child):after {
+header nav > ul > li > .parent-link a:after {
     font-family: "Font Awesome 5 Free";
     content: "\f107";
     display: inline-block;
@@ -162,10 +176,17 @@ header nav > ul li:hover ul li {
     padding: 0;
 }
 
+.child-toggle {
+    display: none;
+}
+
 /* Second and Third level items */
-header nav > ul > li > ul > li a,
-header nav > ul > li > ul > li > ul > li a {
+header .parent ul a {
     padding-left: 0;
+}
+
+header .parent .parent .parent ul a {
+    padding-left: .5 * $spacing-l;
 }
 
 .sub-menu ul {
