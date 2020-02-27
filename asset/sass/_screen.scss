@@ -274,14 +274,6 @@ header nav ul {
             content: "\f105";
         }
     }
-
-    li > ul:hover:before {
-        content: "\f107";
-    }
-
-    a:hover ~ ul:before {
-        color: $gray;
-    }
 }
 
 header nav > ul > li:last-child {
