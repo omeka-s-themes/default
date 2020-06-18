@@ -708,6 +708,21 @@ body.resource #content > h2:first-of-type + h3 {
 
 /* @end */
 
+/* @group ----- Search ----- */
+
+.index.search .results ul {
+  list-style: none;
+  padding-left: 0;
+  
+  li {
+    margin-bottom: $spacing-s;
+    padding-bottom: $spacing-s;
+    border-bottom: 1px solid $gray;
+  }
+}
+
+/* @end */
+
 /* @group ----- Common Modules ---- */
 
 a.metadata-browse-link {

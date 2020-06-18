@@ -285,6 +285,11 @@ body.item-set .metadata ~ nav.pagination:first-of-type {
     margin-bottom: 0;
 }
 
+/* @group ----- Search ----- */
+
+.index.search .results ul {
+  columns: 2;
+}
 
 /* @end */
 
