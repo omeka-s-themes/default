@@ -479,6 +479,10 @@ footer {
     padding: 0 gutter() $spacing-l;
 }
 
+.page-footer {
+    clear: both;
+}
+
 /* @end */
 
 /* @group ----- Page and Blocks ----- */
