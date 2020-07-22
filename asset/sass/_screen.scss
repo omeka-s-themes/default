@@ -477,6 +477,7 @@ button.o-icon-search {
 footer {
     @include container;
     padding: 0 gutter() $spacing-l;
+    clear: both;
 }
 
 /* @end */
