@@ -710,15 +710,35 @@ body.resource #content > h2:first-of-type + h3 {
 
 /* @group ----- Search ----- */
 
-.index.search .results ul {
+.results {
+  margin-bottom: 2 * $spacing-l;
+}
+
+.results ul {
   list-style: none;
-  padding-left: 0;
-  
-  li {
-    margin-bottom: $spacing-s;
-    padding-bottom: $spacing-s;
-    border-bottom: 1px solid $gray;
-  }
+  padding-left: 0;  
+}
+
+.results .item-title {
+  font-weight: bold;
+}
+
+.results > ul {
+  margin: (-1 * $spacing-m) 0 0 0;
+}
+
+.results > ul > li {
+  margin-bottom: $spacing-l;
+}
+
+.results .tablesaw {
+  margin: (-1 * $spacing-m) 0 $spacing-m 0;
+}
+
+.index.search .results ul li {
+  margin-bottom: $spacing-s;
+  padding-bottom: $spacing-s;
+  border-bottom: 1px solid $gray;
 }
 
 /* @end */
