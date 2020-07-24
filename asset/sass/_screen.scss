@@ -771,6 +771,10 @@ body.resource #content > h2:first-of-type + h3 {
   float: right;
 }
 
+.sitewide-search-form ~ p {
+  clear: both;
+}
+
 .index.search .results ul li {
   margin-bottom: $spacing-s;
   padding-bottom: $spacing-s;
