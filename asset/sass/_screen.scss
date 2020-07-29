@@ -738,10 +738,6 @@ body.resource #content > h2:first-of-type + h3 {
   margin-bottom: $spacing-l;
 }
 
-.results .tablesaw {
-  margin: (-1 * $spacing-m) 0 $spacing-m 0;
-}
-
 .pagination + .results {
   margin: $spacing-l 0 0;
   clear: both;
