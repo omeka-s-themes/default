@@ -728,15 +728,71 @@ body.resource #content > h2:first-of-type + h3 {
 
 /* @group ----- Search ----- */
 
-.index.search .results ul {
+.results {
+  margin-bottom: 2 * $spacing-l;
+  clear: both;
+}
+
+.results ul {
   list-style: none;
-  padding-left: 0;
-  
-  li {
-    margin-bottom: $spacing-s;
-    padding-bottom: $spacing-s;
-    border-bottom: 1px solid $gray;
-  }
+  padding-left: 0;  
+}
+
+.results .result-title {
+  font-weight: bold;
+}
+
+.results > ul {
+  margin: (-1 * $spacing-m) 0 0 0;
+}
+
+.results .result-site,
+.results ul ul {
+  display: block;
+  padding-left: $spacing-m;
+}
+
+.results > ul > li {
+  margin-bottom: $spacing-l;
+}
+
+.pagination + .results {
+  margin: $spacing-l 0 0;
+  clear: both;
+}
+
+.sitewide-search-form {
+  display: none;
+}
+
+.sitewide-search-form ~ .results + .pagination {
+  margin-top: 0;
+}
+
+.sitewide-search-form ~ .advanced-search {
+  display: block;
+}
+
+.sitewide-search-form ~ h2 {
+  width: 50%;
+  float: left;
+}
+
+.sitewide-search-form ~ .pagination {
+  margin: (1.25 * $spacing-l) 0 $spacing-l;
+  text-align: right;
+  width: 50%;
+  float: right;
+}
+
+.sitewide-search-form ~ p {
+  clear: both;
+}
+
+.index.search .results ul li {
+  margin-bottom: $spacing-s;
+  padding-bottom: $spacing-s;
+  border-bottom: 1px solid $gray;
 }
 
 /* @end */
