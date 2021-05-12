@@ -795,6 +795,10 @@ body.resource #content > h2:first-of-type + h3 {
   border-bottom: 1px solid $gray;
 }
 
+.items.search #search {
+    display: none;
+}
+
 /* @end */
 
 /* @group ----- Common Modules ---- */
