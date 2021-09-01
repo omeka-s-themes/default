@@ -63,12 +63,6 @@ header nav ul li {
     position: static;
 }
 
-header nav.closed ul,
-header nav ul ul li {
-    height: auto;
-    overflow: visible;
-}
-
 header nav ul a:hover {
     background-color: transparent;
 }
@@ -84,6 +78,7 @@ header nav ul.navigation {
     position: static;
     display: flex;
     align-items: flex-end;
+    height: auto;
 
     li ul:before {
         display: none;
@@ -108,6 +103,10 @@ header nav ul.navigation {
         z-index: 1;
     }
 
+    ul ul {
+        height: 0;
+    }
+
     & > li:hover > ul {
         @include container;
         padding: $spacing-m (2 * gutter());
@@ -115,6 +114,7 @@ header nav ul.navigation {
         right: 0;
         border-bottom: 0;
         border-color: $light;
+        height: auto;
 
         &:after {
             content: "";
