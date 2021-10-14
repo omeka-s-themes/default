@@ -15,6 +15,21 @@ td {
     border-bottom: 1px solid $gray;
 }
 
+.field .field-meta {
+    width: 30%;
+    align-items: flex-start;
+}
+
+.field .label,
+.field label {
+    padding-top: $spacing-s;
+}
+
+.field .inputs {
+    width: 70%;
+    padding-left: gutter();
+}
+
 /* @group ----- Header ----- */
 
 header {

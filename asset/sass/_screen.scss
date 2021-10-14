@@ -139,27 +139,19 @@ select {
     flex-wrap: wrap;
 }
 
-.field .field-meta {
-    width: 30%;
-    padding: $spacing-s gutter() 0 0;
+.field .inputs input[type="checkbox"] {
+    vertical-align: bottom;
 }
 
-.field .inputs {
-    width: 70%;
-    padding-left: gutter();
+.field .field-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
 
-    & > select,
-    & > textarea,
-    & > input[type="text"],
-    & > input[type="password"],
-    & > input[type="email"],
-    & > input[type="url"] {
-        width: 100%;
-    }
-
-    input[type="checkbox"] {
-        vertical-align: bottom;
-    }
+.field.multi-value .label,
+.field.multi-value .field-description {
+    margin-right: $spacing-s;
 }
 
 .field.required .field-meta:after {
@@ -174,6 +166,14 @@ select {
 
 .field-description {
     font-size: .75 * $base-font-size;
+}
+
+.field .inputs {
+    width: 100%;
+}
+
+.field .value * {
+    max-width: 100%;
 }
 
 /* @end */
@@ -708,20 +708,9 @@ body.resource #content > h2:first-of-type + h3 {
 }
 
 .remove-value {
-    text-indent: -9999px;
     position: relative;
     width: 1.5 * $spacing-l;
     margin-left: $spacing-s;
-
-    &:before {
-        text-indent: 0;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        line-height: 1.5 * $base-line-height;
-    }
 }
 
 /* @end */
