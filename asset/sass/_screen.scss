@@ -415,10 +415,11 @@ nav.pagination {
 
 /* @group ----- Header ----- */
 
-.site-title h1 {
+h1.site-title {
     font-size: 1.25 * $base-font-size;
     line-height: $base-line-height;
-    padding-right: $base-line-height;
+    padding-right: 1.5 * $base-line-height;
+    padding-left: gutter();
 }
 
 header {
@@ -429,8 +430,7 @@ header {
 
     & > * {
         @include container;
-        padding: 0 gutter();
-        display: block;
+         display: block;
     }
 }
 
@@ -485,6 +485,19 @@ button.o-icon-search {
         text-indent: 0;
         line-height: 1.5 * $base-line-height;
     }
+}
+
+.banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-top: (-2 * $spacing-l);
+    z-index: -1;
+}
+
+.banner img {
+    width: 100%;
 }
 
 /* @end */

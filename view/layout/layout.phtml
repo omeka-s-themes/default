@@ -13,6 +13,10 @@ $this->headScript()->prependFile($this->assetUrl('js/default.js'));
 $this->headScript()->prependFile($this->assetUrl('js/global.js', 'Omeka'));
 $this->headScript()->prependFile($this->assetUrl('vendor/jquery/jquery.min.js', 'Omeka'));
 $this->jsTranslate();
+$banner = $this->themeSettingAssetUrl('banner');
+$bannerHeight = $this->themeSetting('banner_height');
+$bannerHeightMobile = $this->themeSetting('banner_height_mobile');
+$bannerPosition = ($this->themeSetting('banner_position')) ? str_replace('_','-', $this->themeSetting('banner_position')) : 'center';
 $this->trigger('view.layout');
 $userBar = $this->userBar();
 ?>
@@ -38,6 +42,18 @@ $userBar = $this->userBar();
                 opacity: .75;
             }
             <?php endif; ?>
+
+            .banner {
+                height: <?php echo ($bannerHeight !== '') ? $bannerHeight: 'auto'  ?>;
+                align-items: <?php echo $bannerPosition; ?>;
+            }
+            <?php if ($bannerHeightMobile !== ''): ?>
+                @media screen and (max-width:640px) {
+                    .banner {
+                        height: <?php echo $bannerHeightMobile; ?>;
+                    }
+                }
+            <?php endif; ?>
         </style>
     </head>
 
@@ -45,8 +61,8 @@ $userBar = $this->userBar();
         <a id="skipnav" href="#content"><?php echo $this->translate('Skip to main content'); ?></a>
         <?php echo $userBar; ?>
         <header>
-            <h1>
-                <a href="<?php echo $site->url(); ?>" class="site-title">
+            <h1 class="site-title">
+                <a href="<?php echo $site->url(); ?>">
                 <?php if ($this->themeSetting('logo')): ?>
                     <img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" alt="<?php echo $escape($siteTitle); ?>" />
                 <?php else: ?>
@@ -66,6 +82,11 @@ $userBar = $this->userBar();
             ?>
             </nav>
         </header>
+        <?php if ($banner): ?>
+        <div class="banner">
+            <img src="<?php echo $this->themeSettingAssetUrl('banner'); ?>" title="Banner">
+        </div>
+        <?php endif; ?>
         <div id="content" role="main">
             <?php echo $this->content; ?>
         </div>

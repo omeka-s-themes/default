@@ -42,8 +42,9 @@ header > * {
     padding: 0 (2 * gutter());
 }
 
-header > h1 {
+h1.site-title {
     margin: $spacing-s auto;
+    padding: 0 (2 * gutter());
 }
 
 /* @end */
