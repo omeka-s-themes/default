@@ -47,6 +47,10 @@ h1.site-title {
     padding: 0 (2 * gutter());
 }
 
+.banner {
+    margin-top: (-2 * $spacing-l);
+}
+
 /* @end */
 
 /* @group ----- Footer ----- */
