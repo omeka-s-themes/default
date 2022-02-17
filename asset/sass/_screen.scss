@@ -626,6 +626,32 @@ ul.resource-list .resource img ~ * {
 
 /* @group ----- Show ----- */
 
+.expand:after,
+.collapse:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+.expand:after {
+    content: "\f0da";
+}
+
+.collapse:after {
+    content: "\f0d7"
+}
+
+.collapsible {
+    display: none;
+}
+
+.collapse + .collapsible {
+    display: block;
+    border-left: 3px solid $gray;
+    padding: $spacing-s $spacing-l;
+    margin: $spacing-m 0;
+    width: 100%;
+}
+
 body.resource #content > h2:first-of-type + h3 {
     font-size: .75 * $base-font-size;
     text-transform: uppercase;
@@ -634,11 +660,33 @@ body.resource #content > h2:first-of-type + h3 {
 
 .property {
     margin-bottom: $spacing-l;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .property h4 {
     margin-bottom: 0;
     font-size: .75 * $base-font-size;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.value {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    &:not(:last-child) {
+        margin-bottom: $spacing-m;
+    }
+}
+
+.value-content:not(:only-child) {
+    margin-right: $spacing-s;
 }
 
 .resource-link img {
@@ -664,14 +712,24 @@ body.resource #content > h2:first-of-type + h3 {
 
 .property .value .language {
     background-color: lighten($gray, 15%);
-    padding: .5 * $spacing-s;
-    font-size: .5 * $base-font-size;
+    padding: 0 $spacing-s;
+    font-size: .75 * $base-font-size;
+    margin-right: $spacing-s;
 }
 
 .property .private:after {
     content: "\f070";
     font-family: "Font Awesome 5 Free";
     font-size: .75 * $base-font-size;
+}
+
+.media-list .resource-link {
+    width: 100%;
+    display: block;
+
+    &:not(:last-child) {
+        margin-bottom: $spacing-m;
+    }
 }
 
 #content .media.resource {
