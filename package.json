@@ -1,6 +1,6 @@
 {
   "name": "default",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "description": "The default theme for Omeka S.",
   "main": "gulpfile.js",
   "scripts": {
