@@ -32,6 +32,6 @@
     "> 1% in US"
   ],
   "dependencies": {
-    "minimist": "^1.2.5"
+    "minimist": "^1.2.6"
   }
 }
