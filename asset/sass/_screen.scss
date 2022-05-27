@@ -144,9 +144,8 @@ select {
 }
 
 .field .field-meta {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    padding: $spacing-s (1.5 * $spacing-l) 0 0;
+    position: relative;
 }
 
 .field.multi-value .label,
@@ -158,6 +157,13 @@ select {
     content: "\f069";
     font-family: "Font Awesome 5 Free";
     font-size: .75 * $base-font-size;
+}
+
+.field .add-value {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1.5 * $spacing-l;
 }
 
 .field .value:not(:last-child) {

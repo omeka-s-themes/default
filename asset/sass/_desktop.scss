@@ -17,12 +17,7 @@ td {
 
 .field .field-meta {
     width: 30%;
-    align-items: flex-start;
-}
-
-.field .label,
-.field label {
-    padding-top: $spacing-s;
+    align-self: flex-start;
 }
 
 .field .inputs {
