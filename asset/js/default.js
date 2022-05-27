@@ -1,5 +1,3 @@
-var Omeka = {};
-
 (function($) {
     function fixIframeAspect() {
         $('iframe').each(function () {
