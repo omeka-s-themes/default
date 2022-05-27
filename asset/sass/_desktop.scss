@@ -25,6 +25,11 @@ td {
     padding-left: gutter();
 }
 
+.field .value select {
+    width: initial;
+    margin-bottom: 0;
+}
+
 /* @group ----- Header ----- */
 
 header {

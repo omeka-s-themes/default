@@ -144,8 +144,9 @@ select {
 }
 
 .field .field-meta {
-    padding: $spacing-s (1.5 * $spacing-l) 0 0;
+    padding: $spacing-s (1.5 * $spacing-l) $spacing-s 0;
     position: relative;
+    width: 100%;
 }
 
 .field.multi-value .label,
@@ -161,7 +162,7 @@ select {
 
 .field .add-value {
     position: absolute;
-    right: 0;
+    right: .25rem;
     top: 0;
     width: 1.5 * $spacing-l;
 }
@@ -180,6 +181,11 @@ select {
 
 .field .value * {
     max-width: 100%;
+}
+
+.field .value select {
+    width: 100%;
+    margin-bottom: $spacing-s;
 }
 
 /* @end */
