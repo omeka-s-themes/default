@@ -691,6 +691,7 @@ body.resource #content > h2:first-of-type + h3 {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    margin-left: 0;
 
     &:not(:last-child) {
         margin-bottom: $spacing-m;
