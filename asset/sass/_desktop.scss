@@ -187,6 +187,7 @@ header nav > ul > li > .parent-link > a {
 header nav > ul > li > .parent-link a:after {
     font-family: "Font Awesome 5 Free";
     content: "\f107";
+    font-weight: 900;
     display: inline-block;
     margin-left: $spacing-s;
 }
