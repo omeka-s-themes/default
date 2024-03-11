@@ -78,7 +78,7 @@ textarea {
     border-radius: 0;
     height: 1.5 * $spacing-l;
     border: 1px solid $light;
-    padding: ($spacing-s - 1px) gutter();
+    padding: ($spacing-s - 1px) $spacing-l;
     margin: 0;
 }
 
@@ -236,7 +236,7 @@ header nav:before {
     text-align: center;
     border-radius: 2px;
     position: absolute;
-    right: gutter();
+    right: $spacing-l;
     top: -(1.625 * $spacing-l);
     cursor: pointer;
     line-height: 1.25 * $base-line-height;
@@ -434,7 +434,7 @@ h1.site-title {
     font-size: 1.25 * $base-font-size;
     line-height: $base-line-height;
     padding-right: 1.5 * $base-line-height;
-    padding-left: gutter();
+    padding-left: $spacing-l;
 }
 
 header {
@@ -470,7 +470,7 @@ button.o-icon-search {
     background-color: #fff;
     border-bottom: 1px solid $light;
     border-top: 1px solid $light;
-    padding: $spacing-s gutter();
+    padding: $spacing-s $spacing-l;
 }
 
 #search form {
@@ -521,7 +521,7 @@ button.o-icon-search {
 
 footer {
     @include container;
-    padding: 0 gutter() $spacing-l;
+    padding: 0 $spacing-l $spacing-l;
     clear: both;
 }
 
@@ -531,7 +531,7 @@ footer {
 
 #content {
     @include container;
-    padding: 0 gutter() $spacing-l;
+    padding: 0 $spacing-l $spacing-l;
 }
 
 .resource-list.preview + a {
@@ -589,16 +589,22 @@ ul.resource-list .resource .description {
     max-height: 3 * $spacing-l;
     overflow: hidden;
     position: relative;
+}
 
-    &:after {
-        content: "";
-        position: absolute;
-        top: 1.75 * $spacing-l;
-        left: 0;
-        right: 0;
-        height: 1.25 * $spacing-l;
-        background: linear-gradient(to top, rgba(248,248,248,1), rgba(248,248,248,0));
-    }
+.body-truncate-fade ul.resource-list .resource .description:after {
+    content: "";
+    position: absolute;
+    top: 1.75 * $spacing-l;
+    left: 0;
+    right: 0;
+    height: 1.25 * $spacing-l;
+    background: linear-gradient(to top, rgba(248,248,248,1), rgba(248,248,248,0));
+}
+
+.body-truncate-ellipsis ul.resource-list .resource .description {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;     
 }
 
 ul.resource-list .resource img ~ * {
