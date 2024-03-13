@@ -585,15 +585,12 @@ ul.resource-list .resource h4 {
     margin-top: 0;
 }
 
-ul.resource-list .resource .description {
-    max-height: 3 * $spacing-l;
-    overflow: hidden;
-    position: relative;
-}
-
 .body-truncate-fade ul.resource-list .resource .description:after {
     content: "";
+    overflow: hidden;
     position: absolute;
+    max-height: 4 * $spacing-l;
+    position: relative;
     top: 1.75 * $spacing-l;
     left: 0;
     right: 0;
@@ -602,8 +599,9 @@ ul.resource-list .resource .description {
 }
 
 .body-truncate-ellipsis ul.resource-list .resource .description {
+overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;     
 }
 
