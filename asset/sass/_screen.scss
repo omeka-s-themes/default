@@ -585,13 +585,16 @@ ul.resource-list .resource h4 {
     margin-top: 0;
 }
 
-.body-truncate-fade ul.resource-list .resource .description:after {
-    content: "";
+.body-truncate-fade ul.resource-list .resource .description {
     overflow: hidden;
-    position: absolute;
     max-height: 4 * $spacing-l;
     position: relative;
-    top: 1.75 * $spacing-l;
+}
+
+.body-truncate-fade ul.resource-list .resource .description:after {
+    content: "";
+    position: absolute;
+    top: 2.75 * $spacing-l;
     left: 0;
     right: 0;
     height: 1.25 * $spacing-l;
@@ -599,10 +602,10 @@ ul.resource-list .resource h4 {
 }
 
 .body-truncate-ellipsis ul.resource-list .resource .description {
-overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;     
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;     
 }
 
 ul.resource-list .resource img ~ * {
