@@ -33,7 +33,7 @@ $escape = $this->plugin('escapeHtml');
         endif;
         ?>
         <?php $caption = $attachment->caption(); ?>
-        <?php if ($showTitleOption !== 'none' && $caption): ?>
+        <?php if ($showTitleOption !== 'no_title' || $caption): ?>
         <div class="resource-meta">
             <?php if ($showTitleOption === 'item_title'): ?>
             <h3><?php echo $item->link($item->displayTitle()); ?></h3>
