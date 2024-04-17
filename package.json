@@ -1,6 +1,6 @@
 {
   "name": "default",
-  "version": "1.7.2",
+  "version": "1.8.0",
   "description": "The default theme for Omeka S.",
   "main": "gulpfile.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "omeka-s",
     "theme"
   ],
-  "author": "RRCHNM",
+  "author": "Omeka Team",
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/omeka-s-themes/default/issues"
