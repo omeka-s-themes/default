@@ -772,6 +772,11 @@ ul.resource-list .resource img ~ * {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.browse-controls .pagination {
+    display: flex;
 }
 
 .advanced-search {
