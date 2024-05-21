@@ -373,6 +373,9 @@ nav.pagination {
     margin-bottom: $spacing-l;
     font-size: $base-font-size;
     line-height: 1.5 * $base-line-height;
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .pagination input {
@@ -923,6 +926,28 @@ body.resource #content > h2:first-of-type + h3 {
     padding: $spacing-s $spacing-m ($spacing-s - 3px);
 }
 
+.linked-header {
+    margin-bottom: $spacing-m;
+}
+
+#linked-filter {
+    margin-bottom: $spacing-m;
+}
+
+#linked-filter label {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.linked-header nav.pagination {
+    margin-bottom: 0;
+}
+
+#linked-resources table {
+    margin: $spacing-m 0;
+}
+
 #linked-filter h4 {
     margin-bottom: $spacing-m;
 }
@@ -932,6 +957,8 @@ body.resource #content > h2:first-of-type + h3 {
     display: flex;
     align-items: center;
 }
+
+
 
 /* @end */
 
