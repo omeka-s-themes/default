@@ -286,10 +286,9 @@ body.item-set.item #content {
 }
 
 body.item-set .metadata {
-    width: span(4 of 12 alpha);
+    width: 25%;
     border-left: 5px solid $light;
-    padding-left: $spacing-l;
-    margin-right: $spacing-l;
+    padding: 0 $spacing-l;
 }
 
 body.item-set .metadata h4:first-of-type {
@@ -297,7 +296,7 @@ body.item-set .metadata h4:first-of-type {
 }
 
 body.item-set #content .metadata ~ * {
-    width: span(8 of 12 omega);
+    width: 75%;
     border-left: 1px solid $light;
     padding-left: $spacing-l;
 }
