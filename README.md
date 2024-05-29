@@ -36,10 +36,7 @@ Run these commands within the theme's root directory.
 
 ## Resource Page Configuration
 
-Omeka S 4.0 introduced configurable resource pages. Default supports block configuration for items, item sets, and media show pages. Each of those views contains two configurable regions.
-
-* **Main with sidebar**: This is a version of the primary content area that expects to sit alongside a single right sidebar.
-* **Right sidebar**: This is a sidebar that sits to the right of "main with sidebar".
+Omeka S 4.0 introduced configurable resource pages. Default supports block configuration for items, item sets, and media show pages. Each of those views contains a single configurable region.
 
 ## Copyright
 Default is Copyright © 2016-present Corporation for Digital Scholarship, Vienna, Virginia, USA http://digitalscholar.org
