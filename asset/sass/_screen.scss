@@ -656,7 +656,6 @@ footer {
     width: 100vw;
     max-width: 100%;
     align-items: stretch;
-    margin: $spacing-l 0;
 
     .resource {
         display: flex;
@@ -675,6 +674,10 @@ footer {
     .resource > a,
     .media-render {
         max-width: 50%;
+    }
+
+    .resource:not(:last-child) {
+        margin-bottom: 0;
     }
 }
 
