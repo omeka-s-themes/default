@@ -643,6 +643,14 @@ footer {
     max-width: none;
 }
 
+.page-layout-grid .block-media {
+    container-type: inline-size;
+}
+
+.page-layout-grid .block-media.has-background {
+    align-self: start;
+}
+
 .media-card.media-embed {
     --grid-column-count: 2 !important;
     --grid-item--min-width: 150px;
@@ -681,7 +689,7 @@ footer {
     }
 }
 
-@media screen and (max-width:799px) {
+@container (max-width:799px) {
     .media-card.media-embed {
         --grid-column-count: 1 !important;
     }
