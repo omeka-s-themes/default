@@ -566,36 +566,37 @@ footer {
         padding-right: 0;
     }
 
-    &.dark-accent {
-        color: #fff;
-        position: relative;
+}
 
-        &:after {
-            content: "";
-            background-color: $bold;
-            z-index: -1;
-            position: absolute;
-            left: -9999px;
-            right: -9999px;
-            top: 0;
-            bottom: 0;
-        }
+.dark-accent {
+    color: #fff;
+    position: relative;
+
+    &:after {
+        content: "";
+        background-color: $bold;
+        z-index: -1;
+        position: absolute;
+        left: -9999px;
+        right: -9999px;
+        top: 0;
+        bottom: 0;
     }
+}
 
-    &.light-accent {
-        position: relative;
+.light-accent {
+    position: relative;
 
-        &:after {
-            content: "";
-            background-color: #fff;
-            z-index: -1;
-            position: absolute;
-            left: -9999px;
-            right: -9999px;
-            top: 0;
-            bottom: 0;
-            border: 1px solid $light;
-        }
+    &:after {
+        content: "";
+        background-color: #fff;
+        z-index: -1;
+        position: absolute;
+        left: -9999px;
+        right: -9999px;
+        top: 0;
+        bottom: 0;
+        border: 1px solid $light;
     }
 }
 
