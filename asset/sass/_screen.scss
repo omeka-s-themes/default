@@ -582,6 +582,29 @@ footer {
         top: 0;
         bottom: 0;
     }
+
+    a:link {
+        font-weight: bold;
+    }
+    
+    a:link, 
+    a:visited {
+        color: #ddd;
+    }
+
+    ul.resource-list .resource,
+    ul.preview.resource-list li:first-of-type {
+        border-color: #9b9b9b;
+    }
+
+    button, 
+    a.button, 
+    .resource-list.preview + a, 
+    [type="submit"] {
+        background-color: #ddd;
+        color: $bold;
+        font-weight: normal;
+    }
 }
 
 .light-accent {
@@ -748,6 +771,14 @@ ul.resource-list .resource h4 {
     right: 0;
     height: 1.25 * $spacing-l;
     background: linear-gradient(to top, rgba(248,248,248,1), rgba(248,248,248,0));
+}
+
+.body-truncate-fade .light-accent ul.resource-list .resource .description::after {
+    background: linear-gradient(to top, rgba(#ffffff,1), rgba(#ffffff,0));
+}
+
+.body-truncate-fade .dark-accent ul.resource-list .resource .description::after {
+    background: linear-gradient(to top, rgba($bold, 1), rgba($bold, 0));
 }
 
 .body-truncate-ellipsis ul.resource-list .resource .description {
