@@ -607,6 +607,11 @@ footer {
         color: $bold;
         font-weight: normal;
     }
+
+    .carousel-block button {
+        background-color: transparent;
+        color: #fff;
+    }
 }
 
 .light-accent {
