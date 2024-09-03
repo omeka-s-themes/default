@@ -571,6 +571,8 @@ footer {
 .dark-accent {
     color: #fff;
     position: relative;
+    padding: $spacing-l 0;
+    display: flow-root;
 
     &:after {
         content: "";
@@ -609,6 +611,9 @@ footer {
 
 .light-accent {
     position: relative;
+    padding: $spacing-l 0;
+    display: flow-root;
+
 
     &:after {
         content: "";
@@ -688,6 +693,12 @@ footer {
     width: 100vw;
     max-width: 100%;
     align-items: stretch;
+    color: #000;
+
+    a:link,
+    a:visited {
+        color: $link;
+    }
 
     .resource {
         display: flex;
