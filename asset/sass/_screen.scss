@@ -682,6 +682,12 @@ footer {
     container-type: inline-size;
 }
 
+.page-layout-grid .block-media.block-layout-alignment-block-right,
+.page-layout-grid .block-media.block-layout-alignment-block-left,
+.page-layout-grid .block-media.block-layout-alignment-block-center {
+    container-type: normal;
+}
+
 .page-layout-grid .block-media.has-background {
     align-self: start;
 }
