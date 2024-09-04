@@ -553,6 +553,7 @@ footer {
 }
 
 .spotlight {
+    clear: both;
     padding: $spacing-l;
     padding-right: calc(50% + #{$spacing-l});
     background-position: right center;
@@ -571,7 +572,8 @@ footer {
 .dark-accent {
     color: #fff;
     position: relative;
-    padding: $spacing-l 0;
+    padding-top: $spacing-l;
+    padding-bottom: $spacing-l;
     display: flow-root;
     clear: both;
 
@@ -617,7 +619,8 @@ footer {
 
 .light-accent {
     position: relative;
-    padding: $spacing-l 0;
+    padding-top: $spacing-l;
+    padding-top: $spacing-l;
     display: flow-root;
     clear: both;
 
