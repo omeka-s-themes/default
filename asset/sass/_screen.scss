@@ -826,6 +826,10 @@ ul.resource-list .resource img ~ * {
     margin-bottom: $spacing-l;
 }
 
+.search-filters .filter {
+    display: inline-flex;
+}
+
 .filter-label,
 .filter-value {
     display: inline-block;
@@ -835,10 +839,6 @@ ul.resource-list .resource img ~ * {
 
 .filter-label {
     background-color: $light;
-}
-
-.filter-value {
-    margin-left: -5px;
 }
 
 .browse-controls {
