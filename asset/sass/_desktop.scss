@@ -135,6 +135,7 @@ header nav ul.navigation {
         border-bottom: 0;
         border-color: $light;
         height: auto;
+        overflow: visible;
 
         &:after {
             content: "";
