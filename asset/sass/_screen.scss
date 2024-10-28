@@ -71,13 +71,13 @@ select {
 }
 
 input[type="text"],
+input[type="number"],
 input[type="password"],
 input[type="email"],
 input[type="url"],
 textarea {
     appearance: none;
     border-radius: 0;
-    height: 1.5 * $spacing-l;
     border: 1px solid $light;
     padding: ($spacing-s - 1px) $spacing-s;
     margin: 0;
@@ -96,23 +96,15 @@ input[type="file"] {
 button,
 .button,
 a.button,
+a.button:visited,
 [type="submit"] {
-    background-color: $light;
-    border-radius: 2px;
-    padding: $spacing-s;
-    display: inline-block;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border: 0;
-    cursor: pointer;
+    @include button;
 }
 
 select {
     background-color: #fff;
     padding: $spacing-s;
-    border-color: $light;
-    height: 1.5 * $spacing-l;
+    border: 1px solid $light;
 }
 
 ::-webkit-input-placeholder {
@@ -406,14 +398,9 @@ nav.pagination {
 }
 
 .pagination .button {
-    border: 1px solid $light;
-    background-color: $light;
+    @include button;
     width: 1.5 * $spacing-l;
     text-align: center;
-    padding: $spacing-s;
-    border-radius: 2px;
-    color: #000;
-    line-height: $base-line-height;
 }
 
 .pagination .inactive.button {
@@ -540,7 +527,7 @@ footer {
 }
 
 .resource-list.preview + a {
-    @extend .button;
+    @include button;
 }
 
 .resource-list.preview + a {
