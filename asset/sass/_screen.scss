@@ -219,10 +219,7 @@ header nav.closed ul {
     margin: 0;
 }
 
-header nav:before {
-    font-family: "Font Awesome 5 Free";
-    content: "\f0c9";
-    font-weight: 900;
+#mobile-nav-toggle {
     display: block;
     width: 1.25 * $spacing-l;
     height: 1.25 * $spacing-l;
@@ -231,16 +228,22 @@ header nav:before {
     border-radius: 2px;
     position: absolute;
     right: $spacing-l;
-    top: -(1.625 * $spacing-l);
+    top: (-1.5 * $spacing-l);
     cursor: pointer;
-    line-height: 1.25 * $base-line-height;
+    line-height: 1;
+}
+
+#mobile-nav-toggle:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0c9";
+    font-weight: 900;
 }
 
 header nav.open {
-    margin: $spacing-m 0 -1px;
+    margin: 0 0 -1px;
 }
 
-header nav.open:before {
+header nav.open #mobile-nav-toggle:before {
     content: "\f00d";
 }
 
@@ -254,6 +257,7 @@ header nav ul {
         display: inline-block;
         width: 100%;
         padding: $spacing-s;
+        padding-left: $spacing-l;
     }
 
     a:hover {
@@ -331,17 +335,17 @@ header nav > ul > li > ul > li.active > a:before {
 }
 
 header nav > ul > li > ul > li a {
-    padding-left: $spacing-l;
+    padding-left: 2.5 * $spacing-l;
 }
 
 /* Third level items */
 header nav > ul > li > ul > li > ul > li a {
-    padding-left: 2 * $spacing-l;
+    padding-left: 3 * $spacing-l;
 }
 
 /* Fourth level items */
 header nav > ul > li > ul > li > ul > li > ul > li a {
-    padding-left: 3 * $spacing-l;
+    padding-left: 3.5 * $spacing-l;
 }
 
 .sub-menu ul {
@@ -425,8 +429,7 @@ nav.pagination {
 h1.site-title {
     font-size: 1.25 * $base-font-size;
     line-height: $base-line-height;
-    padding-right: 1.5 * $base-line-height;
-    padding-left: $spacing-l;
+    padding: $spacing-m (1.5 * $base-line-height) $spacing-m $spacing-l;
     margin: 0;
 }
 
@@ -439,10 +442,6 @@ header {
 #top-nav {
     @include container;
     background-color: #fff;
-}
-
-#top-nav {
-    border-bottom: 1px solid $light;
 }
 
 .site-title:hover,

@@ -42,7 +42,7 @@ header {
     padding: 0 (2 * $spacing-l);
     position: relative;
 
-    &:after {
+    &:before {
         content: "";
         position: absolute;
         top: 0;
@@ -52,6 +52,20 @@ header {
         background-color: #fff;
         z-index: -1;
     }
+}
+
+#top-nav {
+    border-bottom: 1px solid $light;
+}
+
+#top-nav:after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    height: 1px;
+    left: -9999px;
+    right: -9999px;
+    background-color: $light;
 }
 
 h1.site-title {
@@ -111,16 +125,14 @@ footer {
 
 /* @group ----- Navigation ----- */
 
+#mobile-nav-toggle {
+    display: none;
+}
+
 header nav {
     margin: 0 auto !important;
     position: static;
     padding: 0 (2 * $spacing-l);
-}
-
-header nav:before {
-    content: "";
-    border: 0;
-    display: none;
 }
 
 header nav ul a {
