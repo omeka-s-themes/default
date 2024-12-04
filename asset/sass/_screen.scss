@@ -427,18 +427,22 @@ h1.site-title {
     line-height: $base-line-height;
     padding-right: 1.5 * $base-line-height;
     padding-left: $spacing-l;
+    margin: 0;
 }
 
 header {
     margin: 0 0 (2.5 * $spacing-l);
-    background-color: #fff;
-    border-bottom: 1px solid $light;
     position: relative;
+}
 
-    & > * {
-        @include container;
-         display: block;
-    }
+.site-title,
+#top-nav {
+    @include container;
+    background-color: #fff;
+}
+
+#top-nav {
+    border-bottom: 1px solid $light;
 }
 
 .site-title:hover,
@@ -455,19 +459,17 @@ button.o-icon-search {
 }
 
 #search {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: #fff;
-    border-bottom: 1px solid $light;
-    border-top: 1px solid $light;
-    padding: $spacing-s $spacing-l;
+    position: relative;
+    @include container;
 }
 
 #search form {
     display: flex;
     flex-wrap: nowrap;
+    background-color: #fff;
+    border-bottom: 1px solid $light;
+    border-top: 1px solid $light;
+    padding: $spacing-s $spacing-l;
 }
 
 #search form input[type="text"] {
@@ -500,7 +502,6 @@ button.o-icon-search {
     display: flex;
     align-items: center;
     overflow: hidden;
-    z-index: -1;
 }
 
 .banner img {

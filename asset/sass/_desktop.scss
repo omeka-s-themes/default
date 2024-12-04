@@ -34,23 +34,71 @@ td {
 
 header {
     position: relative;
-    padding: $spacing-m 0 0;
     margin-bottom: 2 * $spacing-l;
 }
 
-header > * {
+.site-title,
+#top-nav {
     padding: 0 (2 * $spacing-l);
+    position: relative;
+
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -9999px;
+        right: -9999px;
+        background-color: #fff;
+        z-index: -1;
+    }
 }
 
 h1.site-title {
-    margin: $spacing-s auto;
-    padding: 0 (2 * $spacing-l);
+    margin: 0 auto;
+    padding: $spacing-m (2 * $spacing-l);
+}
+
+#search {
+    width: 100%;
+    position: absolute;
+    margin-top: -1px;
+    text-align: right;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#search form {
+    display: inline-flex;
+    padding: $spacing-s;
+    border-left: 1px solid $light;
+    border-right: 1px solid $light;
+}
+
+#search form input[type="text"],
+#search form button[type="submit"] {
+    height: $base-line-height;
+    font-size: .75 * $base-font-size;
+    line-height: $base-line-height;
+}
+
+#search form button[type="submit"] {
+    width: $base-line-height;
+    height: $base-line-height;
+    padding: 0;
+
+    &:before {
+        line-height: $base-line-height;
+    }
+}
+
+#top-nav {
+    position: relative;
 }
 
 .banner {
-    margin-top: (-2 * $spacing-l);
+    z-index: -1;
 }
-
 /* @end */
 
 /* @group ----- Footer ----- */
@@ -225,29 +273,6 @@ header .parent .parent .parent ul a {
     &:first-of-type {
         border: 0;
         padding: 0;
-    }
-}
-
-#search {
-    left: 75%;
-    border-left: 1px solid $light;
-    padding: $spacing-s;
-}
-
-#search form input[type="text"],
-#search form button[type="submit"] {
-    height: $base-line-height;
-    font-size: .75 * $base-font-size;
-    line-height: $base-line-height;
-}
-
-#search form button[type="submit"] {
-    width: $base-line-height;
-    height: $base-line-height;
-    padding: 0;
-
-    &:before {
-        line-height: $base-line-height;
     }
 }
 

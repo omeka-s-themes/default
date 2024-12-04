@@ -72,23 +72,23 @@ $userBar = $this->userBar();
                 <?php endif; ?>
                 </a>
             </h1>
-            <div id="search">
-                <?php echo $this->partial('common/search-form'); ?>
-            </div>
-
-            <nav>
+            <nav id="top-nav">
             <?php
             echo $site->publicNav()->menu()->renderMenu(null, [
                 'maxDepth' => $this->themeSetting('nav_depth') - 1
             ]);
             ?>
             </nav>
+            <div id="search">
+                <?php echo $this->partial('common/search-form'); ?>
+            </div>
+            <?php if ($banner): ?>
+            <div class="banner">
+                <img role="presentation" src="<?php echo $this->themeSettingAssetUrl('banner'); ?>" title="Banner">
+            </div>
+            <?php endif; ?>
+
         </header>
-        <?php if ($banner): ?>
-        <div class="banner">
-            <img role="presentation" src="<?php echo $this->themeSettingAssetUrl('banner'); ?>" title="Banner">
-        </div>
-        <?php endif; ?>
         <div id="content" role="main">
             <?php echo $this->content; ?>
         </div>
