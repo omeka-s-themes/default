@@ -303,6 +303,10 @@ header nav ul {
             content: "\f105";
             font-weight: 900;
         }
+
+        &.open:before {
+            content: "\f107";
+        }
     }
 }
 

@@ -1,4 +1,5 @@
 (function($) {
+
     function fixIframeAspect() {
         $('iframe').each(function () {
             var aspect = $(this).attr('height') / $(this).attr('width');
@@ -20,17 +21,41 @@
         }
     }
 
-    $(document).ready(function() {
-        $('header nav').addClass('closed');
+    var toggleChildNav = function(childMenu, childToggle, expandString, collapseString) {
+        childMenu.toggleClass('open');
+        childToggle.toggleClass('open');
+        if (childMenu.hasClass('open')) {
+            childToggle.attr('aria-label', collapseString);
+        } else {
+            childToggle.attr('aria-label', expandString);
+        }
+    };
 
-        $('header nav').click(function() {
-            $(this).toggleClass('open').toggleClass('closed');
-        });
-        
+    var closeChildNav = function(childMenu, childToggle, expandString) {
+        childMenu.removeClass('open');
+        childToggle.removeClass('open');
+        childToggle.attr('aria-label', expandString);
+    };
+
+    var openChildNav = function(childMenu, childToggle, collapseString) {
+        childMenu.addClass('open');
+        childToggle.addClass('open');
+        childToggle.attr('aria-label', collapseString);
+    };
+
+    $(document).ready(function() {
+        var navElement = $('header nav');
         var expandString = Omeka.jsTranslate('Expand');
         var collapseString = Omeka.jsTranslate('Collapse');
 
-        $('header nav ul ul').each(function(){
+        navElement.addClass('closed');
+
+        navElement.click(function() {
+            $(this).toggleClass('open').toggleClass('closed');
+        });
+        
+
+        navElement.find('ul ul').each(function(){
           var childMenu = $(this);
           var parentItem = childMenu.parent('li');
           var toggleButton = $('<button type="button" class="child-toggle"></button>');
@@ -40,16 +65,30 @@
           parentItem.find('.parent-link').append(toggleButton);
         });
         
-        $('header nav').on('click', '.child-toggle', function(e) {
+        navElement.on('click', '.child-toggle', function(e) {
           e.stopPropagation();
           var childToggle = $(this);
           var childMenu = childToggle.parents('.parent').first().find('ul').first();
-          childMenu.toggleClass('open');
-          if (childMenu.hasClass('open')) {
-            childToggle.attr('aria-label', collapseString);
-          } else {
-            childToggle.attr('aria-label', expandString);
-          }
+          toggleChildNav(childMenu, childToggle, expandString, collapseString);
+        });
+
+        navElement.on('mouseenter', '.parent', function() {            
+            $(this).find('.child-toggle').addClass('open');
+        });
+
+        navElement.on('mouseleave', '.parent', function() {            
+            $(this).find('.child-toggle').removeClass('open');
+        });
+
+        navElement.on('keydown', '.open li:last-child a:only-child', function(e) {
+            if (e.keyCode = "Tab" && !e.shiftKey) {
+                var parentLi = $(this).parents('.parent');
+                e.preventDefault();
+                var childMenu = $(this).parents('ul');
+                var childToggle = parentLi.find('.child-toggle');
+                closeChildNav(childMenu, childToggle, expandString);
+                parentLi.next().find('a').first().focus();
+            }
         });
         
         // Maintain iframe aspect ratios
