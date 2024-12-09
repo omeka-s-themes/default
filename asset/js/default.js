@@ -21,32 +21,27 @@
         }
     }
 
-    var toggleChildNav = function(childMenu, childToggle, expandString, collapseString) {
-        childMenu.toggleClass('open');
-        childToggle.toggleClass('open');
-        if (childMenu.hasClass('open')) {
-            childToggle.attr('aria-label', collapseString);
-        } else {
-            childToggle.attr('aria-label', expandString);
-        }
-    };
-
-    var closeChildNav = function(childMenu, childToggle, expandString) {
-        childMenu.removeClass('open');
-        childToggle.removeClass('open');
-        childToggle.attr('aria-label', expandString);
-    };
-
-    var openChildNav = function(childMenu, childToggle, collapseString) {
-        childMenu.addClass('open');
-        childToggle.addClass('open');
-        childToggle.attr('aria-label', collapseString);
-    };
 
     $(document).ready(function() {
         var navElement = $('header nav');
         var expandString = Omeka.jsTranslate('Expand');
         var collapseString = Omeka.jsTranslate('Collapse');
+
+        var closeChildNav = function(parentLi) {
+            var childToggle = parentLi.find('.child-toggle').first();
+            var childMenu = parentLi.find('ul').first();
+            childMenu.removeClass('open');
+            childToggle.removeClass('open');
+            childToggle.attr('aria-label', expandString);
+        };
+
+        var openChildNav = function(parentLi) {
+            var childToggle = parentLi.find('.child-toggle').first();
+            var childMenu = parentLi.find('ul').first();
+            childMenu.addClass('open');
+            childToggle.addClass('open');
+            childToggle.attr('aria-label', collapseString);
+        };
 
         navElement.addClass('closed');
 
@@ -54,7 +49,6 @@
             $(this).toggleClass('open').toggleClass('closed');
         });
         
-
         navElement.find('ul ul').each(function(){
           var childMenu = $(this);
           var parentItem = childMenu.parent('li');
@@ -65,29 +59,42 @@
           parentItem.find('.parent-link').append(toggleButton);
         });
         
-        navElement.on('click', '.child-toggle', function(e) {
-          e.stopPropagation();
-          var childToggle = $(this);
-          var childMenu = childToggle.parents('.parent').first().find('ul').first();
-          toggleChildNav(childMenu, childToggle, expandString, collapseString);
+        navElement.on('click', '.child-toggle', function() {
+          var parentLi = $(this).parents('.parent').first();
+          var openParentLi = navElement.find('ul.open').parents('.parent').first();
+          var currentlyOpen = $(this).hasClass('open');
+          if ((navElement.find('ul.open').length > 0) || currentlyOpen) {
+            closeChildNav(openParentLi);
+          }
+          if (!currentlyOpen) {
+            openChildNav(parentLi);
+          }
         });
 
         navElement.on('mouseenter', '.parent', function() {            
-            $(this).find('.child-toggle').addClass('open');
+            openChildNav($(this));
         });
 
         navElement.on('mouseleave', '.parent', function() {            
-            $(this).find('.child-toggle').removeClass('open');
+            closeChildNav($(this));
         });
 
-        navElement.on('keydown', '.open li:last-child a:only-child', function(e) {
+        navElement.on('mouseleave', '.child-toggle', function() {            
+            var parentLi = $(this).parents('.parent').first();
+            closeChildNav(parentLi);
+        });
+
+        navElement.on('keydown', '.open li:last-child > a:only-child', function(e) {
             if (e.keyCode = "Tab" && !e.shiftKey) {
-                var parentLi = $(this).parents('.parent');
                 e.preventDefault();
-                var childMenu = $(this).parents('ul');
-                var childToggle = parentLi.find('.child-toggle');
-                closeChildNav(childMenu, childToggle, expandString);
-                parentLi.next().find('a').first().focus();
+                var parentLi = $(this).parents('.parent').first();
+                var nextParentLi = parentLi.next().find('a').first();
+                if (nextParentLi.length > 0) {
+                    nextParentLi.focus();
+                } else {
+                    $('#search-form input:first-child').focus();
+                }
+                closeChildNav(parentLi);
             }
         });
         
