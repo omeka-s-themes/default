@@ -74,7 +74,7 @@ $userBar = $this->userBar();
                 </a>
             </h1>
             <nav id="top-nav">
-            <button type="button" id="mobile-nav-toggle" aria-label="<?php echo $translate('Toggle Menu'); ?>" title="<?php echo $translate('Toggle Menu'); ?>" aria-expanded="false"></button>
+            <button type="button" id="mobile-nav-toggle" aria-expanded="false" aria-label="<?php echo $translate('Toggle Menu'); ?>" title="<?php echo $translate('Toggle Menu'); ?>" aria-expanded="false"></button>
             <?php
             echo $site->publicNav()->menu()->renderMenu(null, [
                 'maxDepth' => $this->themeSetting('nav_depth') - 1,

@@ -32,7 +32,7 @@
             var childMenu = parentLi.find('ul').first();
             childMenu.removeClass('open');
             childToggle.removeClass('open');
-            childToggle.attr('aria-label', expandString);
+            childToggle.attr('aria-label', expandString).attr('aria-expanded', "false");
         };
 
         var openChildNav = function(parentLi) {
@@ -40,17 +40,22 @@
             var childMenu = parentLi.find('ul').first();
             childMenu.addClass('open');
             childToggle.addClass('open');
-            childToggle.attr('aria-label', collapseString);
+            childToggle.attr('aria-label', collapseString).attr('aria-expanded', "true");
         };
 
         navElement.on('click', '#mobile-nav-toggle', function() {
             navElement.toggleClass('open');
+            if (navElement.hasClass('open')) {
+                $(this).attr('aria-expanded', "true");
+            } else {
+                $(this).attr('aria-expanded', "false");
+            }
         });
         
         navElement.find('ul ul').each(function(){
           var childMenu = $(this);
           var parentItem = childMenu.parent('li');
-          var toggleButton = $('<button type="button" class="child-toggle"></button>');
+          var toggleButton = $('<button type="button" class="child-toggle" aria-expanded="false"></button>');
           toggleButton.attr('aria-label', expandString);
           parentItem.addClass('parent');
           parentItem.children('a').first().wrap('<div class="parent-link"></div>');
