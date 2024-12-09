@@ -233,7 +233,7 @@ header nav > ul > li > a {
     margin: $spacing-s;
 }
 
-header nav > ul > li > .parent-link {
+header nav > ul > li > * {
     display: inline-flex;
     width: 100%;
 }

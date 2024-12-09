@@ -213,10 +213,20 @@ header nav {
     padding: 0;
 }
 
-header nav.closed ul {
+header nav ul {
     height: 0;
+    list-style: none;
     overflow: hidden;
     margin: 0;
+    padding: 0;
+}
+
+header nav ul ul {
+    display: none;
+
+    &.open {
+        display: block;
+    }
 }
 
 #mobile-nav-toggle {
@@ -247,11 +257,11 @@ header nav.open #mobile-nav-toggle:before {
     content: "\f00d";
 }
 
-header nav ul {
+header nav.open ul {
     padding-left: 0;
-    list-style: none;
     position: relative;
     margin: 0 auto;
+    height: auto;
 
     a {
         display: inline-block;
@@ -260,14 +270,14 @@ header nav ul {
         padding-left: $spacing-l;
     }
 
+    a:focus {
+        position: relative;
+        z-index: 1;
+    }
+
     a:hover {
         border-bottom: 0;
         background-color: $light;
-    }
-
-    li {
-        border-top: 1px solid $light;
-        position: relative;
     }
 
     li li:last-of-type {
@@ -290,25 +300,36 @@ header nav ul {
         width: calc(100% - #{2 * $spacing-l});
     }
     
-    .child-toggle {
-        color: $light;
-        width: 2 * $spacing-l;
-        text-align: center;
-        background-color: #fff;
-        border-left: 1px solid $light;
-        appearance: none;
-        
-        &:before {
-            font-family: "Font Awesome 5 Free";
-            content: "\f105";
-            font-weight: 900;
-        }
+}
 
-        &.open:before {
-            content: "\f107";
-        }
+header nav .child-toggle {
+    color: $light;
+    width: 2 * $spacing-l;
+    text-align: center;
+    background-color: #fff;
+    border-left: 1px solid $light;
+    appearance: none;
+    
+    &:before {
+        font-family: "Font Awesome 5 Free";
+        content: "\f105";
+        font-weight: 900;
+    }
+
+    &.open:before {
+        content: "\f107";
     }
 }
+
+header nav.open ul.open {
+    overflow: visible;
+}
+
+header nav.open > ul > li {
+    border-top: 1px solid $light;
+    position: relative;
+}
+
 
 header nav > ul > li:last-child {
     border-bottom: 1px solid $light;
@@ -317,7 +338,6 @@ header nav > ul > li:last-child {
 
 header nav > ul ul li {
     height: 0;
-    overflow: hidden;
     border: 0;
 }
 
@@ -338,17 +358,17 @@ header nav > ul > li > ul > li.active > a:before {
     width: 1.5em;
 }
 
-header nav > ul > li > ul > li a {
+header nav.open > ul > li > ul > li a {
     padding-left: 2.5 * $spacing-l;
 }
 
 /* Third level items */
-header nav > ul > li > ul > li > ul > li a {
+header nav.open > ul > li > ul > li > ul > li a {
     padding-left: 3 * $spacing-l;
 }
 
 /* Fourth level items */
-header nav > ul > li > ul > li > ul > li > ul > li a {
+header nav.open > ul > li > ul > li > ul > li > ul > li a {
     padding-left: 3.5 * $spacing-l;
 }
 
