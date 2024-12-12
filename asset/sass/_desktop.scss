@@ -173,7 +173,7 @@ header nav ul.navigation {
     }
 
     & > li:hover > ul,
-    .parent ul.open {
+    & > .parent > ul.open {
         @include container;
         position: absolute;
         top: 100%;
@@ -257,6 +257,10 @@ header nav ul .child-toggle {
 
 header nav .parent .parent .child-toggle {
     display: none;
+}
+
+header nav ul ul {
+    display: block;
 }
 
 /* Second and Third level items */
