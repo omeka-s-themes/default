@@ -71,6 +71,16 @@
           }
         });
 
+        navElement.on('keydown', '.child-toggle, .open a', function(e) {
+            var parentLi = $(this).parents('.parent');
+            var childToggle = parentLi.find('.child-toggle').first();
+            console.log(e.keyCode);
+            if (e.keyCode == '27') {
+                closeChildNav(parentLi);
+                childToggle.focus();
+            }
+        });
+
         navElement.on('mouseenter', '.parent', function() {            
             openChildNav($(this));
         });
