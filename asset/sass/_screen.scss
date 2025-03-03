@@ -216,7 +216,6 @@ header nav {
 header nav ul {
     height: 0;
     list-style: none;
-    overflow: hidden;
     margin: 0;
     padding: 0;
 }
@@ -309,6 +308,11 @@ header nav .child-toggle {
     background-color: #fff;
     border-left: 1px solid $light;
     appearance: none;
+
+    &:focus {
+        position: relative;
+        z-index: 1000;
+    }
     
     &:before {
         font-family: "Font Awesome 5 Free";

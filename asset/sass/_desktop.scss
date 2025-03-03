@@ -245,6 +245,7 @@ header nav ul.open > li {
 header nav > ul > li > .parent-link > a {
     margin: $spacing-s 0 $spacing-s $spacing-s;
     width: calc(100% - #{$spacing-l});
+    position: relative;
 }
 
 header nav ul .child-toggle {
