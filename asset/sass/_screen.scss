@@ -15,7 +15,7 @@ body {
     line-height: $base-line-height;
     margin: 0;
     word-wrap: break-word;
-    overflow-x: none;
+    overflow-x: hidden;
 }
 
 a:link {
