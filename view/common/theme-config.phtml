@@ -1,0 +1,32 @@
+<?php
+$bannerHeight = ($this->themeSetting('banner_height')) ? $this->themeSetting('banner_height') : 'auto';
+$bannerHeightMobile = $this->themeSetting('banner_height_mobile');
+$bannerPosition = ($this->themeSetting('banner_position')) ? str_replace('_','-', $this->themeSetting('banner_position')) : 'center';
+?>
+
+<style>
+    <?php if ($accentColor = $this->themeSetting('accent_color')): ?>
+    a:link,
+    a:visited {
+        color: <?php echo $accentColor; ?>
+    }
+    
+    a:active,
+    a:hover {
+        color: <?php echo $accentColor; ?>;
+        opacity: .75;
+    }
+    <?php endif; ?>
+
+    .banner {
+        height: <?php echo $bannerHeight ?>;
+        align-items: <?php echo $bannerPosition; ?>;
+    }
+    <?php if (isset($bannerHeightMobile) && $bannerHeightMobile !== ''): ?>
+        @media screen and (max-width:640px) {
+            .banner {
+                height: <?php echo $bannerHeightMobile; ?>;
+            }
+        }
+    <?php endif; ?>
+</style>

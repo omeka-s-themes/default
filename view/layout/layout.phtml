@@ -2,6 +2,8 @@
 $escape = $this->plugin('escapeHtml');
 $translate = $this->plugin('translate');
 $siteTitle = $site->title();
+$browseBodyTruncation = ($this->themeSetting('browse_body_truncation')) ? $this->themeSetting('browse_body_truncation') : 'fade';
+$banner = $this->themeSettingAssetUrl('banner');
 $this->htmlElement('html')->setAttribute('lang', $this->lang());
 $this->headMeta()->setCharset('utf-8');
 $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1');
@@ -14,11 +16,6 @@ $this->headScript()->prependFile($this->assetUrl('js/default.js'));
 $this->headScript()->prependFile($this->assetUrl('js/global.js', 'Omeka'));
 $this->headScript()->prependFile($this->assetUrl('vendor/jquery/jquery.min.js', 'Omeka'));
 $this->jsTranslate();
-$banner = $this->themeSettingAssetUrl('banner');
-$bannerHeight = $this->themeSetting('banner_height');
-$bannerHeightMobile = $this->themeSetting('banner_height_mobile');
-$bannerPosition = ($this->themeSetting('banner_position')) ? str_replace('_','-', $this->themeSetting('banner_position')) : 'center';
-$browseBodyTruncation = ($this->themeSetting('browse_body_truncation')) ? $this->themeSetting('browse_body_truncation') : 'fade';
 $this->htmlElement('body')->appendAttribute('class', 'body-truncate-' . $browseBodyTruncation);
 $this->trigger('view.layout'); 
 $userBar = $this->userBar();
@@ -31,33 +28,7 @@ $userBar = $this->userBar();
         <?php echo $this->headLink(); ?>
         <?php echo $this->headStyle(); ?>
         <?php echo $this->headScript(); ?>
-        
-        <style>
-            <?php if ($accentColor = $this->themeSetting('accent_color')): ?>
-            a:link,
-            a:visited {
-                color: <?php echo $accentColor; ?>
-            }
-            
-            a:active,
-            a:hover {
-                color: <?php echo $accentColor; ?>;
-                opacity: .75;
-            }
-            <?php endif; ?>
-
-            .banner {
-                height: <?php echo ($bannerHeight !== '') ? $bannerHeight: 'auto'  ?>;
-                align-items: <?php echo $bannerPosition; ?>;
-            }
-            <?php if ($bannerHeightMobile !== ''): ?>
-                @media screen and (max-width:640px) {
-                    .banner {
-                        height: <?php echo $bannerHeightMobile; ?>;
-                    }
-                }
-            <?php endif; ?>
-        </style>
+        <?php echo $this->partial('common/theme-config'); ?>
     </head>
 
     <?php echo $this->htmlElement('body'); ?>
