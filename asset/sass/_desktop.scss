@@ -159,6 +159,7 @@ header nav ul.navigation {
     display: flex;
     align-items: flex-end;
     height: auto;
+    overflow: visible;
 
     li ul:before {
         display: none;

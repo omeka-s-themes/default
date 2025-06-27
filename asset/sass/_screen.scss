@@ -218,6 +218,7 @@ header nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 header nav ul ul {
@@ -462,7 +463,7 @@ h1.site-title {
 }
 
 header {
-    margin: 0 0 (2.5 * $spacing-l);
+    margin: 0;
     position: relative;
 }
 
