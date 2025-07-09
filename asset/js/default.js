@@ -74,7 +74,6 @@
         navElement.on('keydown', '.child-toggle, .open a', function(e) {
             var parentLi = $(this).parents('.parent');
             var childToggle = parentLi.find('.child-toggle').first();
-            console.log(e.keyCode);
             if (e.keyCode == '27') {
                 closeChildNav(parentLi);
                 childToggle.focus();
@@ -95,9 +94,12 @@
         });
 
         navElement.on('keydown', '.open li:last-child > a:only-child', function(e) {
-            if ((e.keyCode == "9") && !e.shiftKey) {
+            var currentLink = $(this);
+            var parentBranch = currentLink.parents('.navigation > .parent');
+            var lastBranchLink = parentBranch.find('a').last();
+            if ((currentLink.is(lastBranchLink)) && (e.keyCode == "9") && !e.shiftKey) {
                 e.preventDefault();
-                var parentLi = $(this).parents('.parent').first();
+                var parentLi = currentLink.parents('.parent').last();
                 var nextParentLi = parentLi.next().find('a').first();
                 if (nextParentLi.length > 0) {
                     nextParentLi.focus();
