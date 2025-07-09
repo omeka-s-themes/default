@@ -986,22 +986,6 @@ body.resource #content > h2:first-of-type + h3 {
     }
 }
 
-#content .media.resource {
-    display: inline-block;
-    text-align: center;
-    vertical-align: bottom;
-    margin-right: $spacing-s;
-
-    &:hover {
-        border-bottom: 0;
-    }
-}
-
-#content .media.resource img {
-    vertical-align: top;
-    margin-bottom: $spacing-m;
-}
-
 .media-render > * {
     max-width: 100%;
 }
