@@ -6,15 +6,8 @@ $bannerPosition = ($this->themeSetting('banner_position')) ? str_replace('_','-'
 
 <style>
     <?php if ($accentColor = $this->themeSetting('accent_color')): ?>
-    a:link,
-    a:visited {
-        color: <?php echo $accentColor; ?>
-    }
-    
-    a:active,
-    a:hover {
-        color: <?php echo $accentColor; ?>;
-        opacity: .75;
+    :root {
+        --accent: <?php echo $accentColor; ?>;
     }
     <?php endif; ?>
 

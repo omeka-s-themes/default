@@ -12,7 +12,7 @@ td {
     text-align: left;
     padding: $spacing-s $spacing-m;
     padding-bottom: $spacing-s - 1px;
-    border-bottom: 1px solid $gray;
+    border-bottom: 1px solid var(--gray);
 }
 
 .field .field-meta {
@@ -55,7 +55,7 @@ header {
 }
 
 #top-nav {
-    border-bottom: 1px solid $light;
+    border-bottom: 1px solid var(--light);
 }
 
 #top-nav:after {
@@ -65,7 +65,7 @@ header {
     height: 1px;
     left: -9999px;
     right: -9999px;
-    background-color: $light;
+    background-color: var(--light);
 }
 
 h1.site-title {
@@ -85,8 +85,8 @@ h1.site-title {
 #search form {
     display: inline-flex;
     padding: $spacing-s;
-    border-left: 1px solid $light;
-    border-right: 1px solid $light;
+    border-left: 1px solid var(--light);
+    border-right: 1px solid var(--light);
 }
 
 #search form input[type="text"],
@@ -185,7 +185,7 @@ header nav ul.navigation {
         width: 100%;
         padding: ($spacing-m - 1px) (2 * $spacing-l);
         border-bottom: 0;
-        border-color: $light;
+        border-color: var(--light);
         height: auto;
         overflow: visible;
         display: flex;
@@ -201,8 +201,8 @@ header nav ul.navigation {
             position: absolute;
             top: 0;
             bottom: 0;
-            border-bottom: 1px solid $light;
-            border-top: 1px solid $light;
+            border-bottom: 1px solid var(--light);
+            border-top: 1px solid var(--light);
             z-index: -1;
         }
     }
@@ -254,7 +254,7 @@ header nav ul .child-toggle {
     padding: 0;
     border-left: 0;
     width: $spacing-l;
-    color: $link;
+    color: var(--accent);
 }
 
 header nav .parent .parent .child-toggle {
@@ -275,7 +275,7 @@ header .parent .parent .parent ul a {
 }
 
 .sub-menu ul {
-    border-bottom: 1px solid $light;
+    border-bottom: 1px solid var(--light);
     padding-bottom: ($spacing-m - 1px);
 }
 
@@ -328,7 +328,7 @@ body.item-set.item #content {
 
 body.item-set .metadata {
     width: 35%;
-    border-left: 5px solid $light;
+    border-left: 5px solid var(--light);
     padding: 0 $spacing-l;
 }
 
@@ -338,7 +338,7 @@ body.item-set .metadata h4:first-of-type {
 
 body.item-set #content .metadata ~ * {
     width: 65%;
-    border-left: 1px solid $light;
+    border-left: 1px solid var(--light);
     padding-left: $spacing-l;
 }
 
@@ -374,7 +374,7 @@ body.item-set .metadata ~ nav.pagination:first-of-type {
 }
 
 ul.preview.resource-list li:first-of-type {
-    border-top: 1px solid $light;
+    border-top: 1px solid var(--light);
     padding-top: ($spacing-l - 1px);
 }
 

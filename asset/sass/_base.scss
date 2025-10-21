@@ -1,10 +1,12 @@
 // Colors
 
-$gray:                                  #ababab;
-$bold:                                  darken($gray, 20%);
-$light:                                 lighten($gray, 20%);
-$bg:                                    lighten($gray, 30%);
-$link:                                  #920b0b;
+:root {
+    --gray: #ababab;
+    --bold: color-mix(in srgb, var(--gray), black 40%);
+    --light: color-mix(in srgb, var(--gray), white 60%);
+    --bg: color-mix(in srgb, var(--gray), white 90%);
+    --accent: #920b0b;
+}
 
 // Typography
 
@@ -26,8 +28,8 @@ $spacing-l:                             $base-line-height;
 }
 
 @mixin button {
-    border: 1px solid $light;
-    background-color: $light;
+    border: 1px solid var(--light);
+    background-color: var(--light);
     border-radius: 2px;
     padding: $spacing-s;
     display: inline-block;

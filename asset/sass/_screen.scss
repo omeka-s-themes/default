@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    background-color: $bg;
+    background-color: var(--bg);
     font-family: "Open Sans", sans-serif;
     font-size: $base-font-size;
     line-height: $base-line-height;
@@ -20,16 +20,16 @@ body {
 
 a:link {
     text-decoration: none;
-    color: $link;
+    color: var(--accent);
 }
 
 a:visited {
-    color: $link;
+    color: var(--accent);
 }
 
 a:active,
 a:hover {
-    color: lighten($link, 20%);
+    color: color-mix(in srgb, var(--accent), white 20%);
 }
 
 h1 {
@@ -78,7 +78,7 @@ input[type="url"],
 textarea {
     appearance: none;
     border-radius: 0;
-    border: 1px solid $light;
+    border: 1px solid var(--light);
     padding: ($spacing-s - 1px) $spacing-s;
     margin: 0;
 }
@@ -104,7 +104,7 @@ a.button:visited,
 select {
     background-color: #fff;
     padding: $spacing-s;
-    border: 1px solid $light;
+    border: 1px solid var(--light);
 }
 
 ::-webkit-input-placeholder {
@@ -191,7 +191,7 @@ select {
   position: fixed;
   top: $spacing-l;
   left: 50%;
-  border: 1px solid $gray;
+  border: 1px solid var(--gray);
   transform: translateX(-50%);
   z-index: -5;
   padding: $spacing-s;
@@ -233,7 +233,7 @@ header nav ul ul {
     display: block;
     width: 1.25 * $spacing-l;
     height: 1.25 * $spacing-l;
-    border: 1px solid $light;
+    border: 1px solid var(--light);
     text-align: center;
     border-radius: 2px;
     position: absolute;
@@ -277,7 +277,7 @@ header nav.open ul {
 
     a:hover {
         border-bottom: 0;
-        background-color: $light;
+        background-color: var(--light);
     }
 
     li li:last-of-type {
@@ -303,11 +303,11 @@ header nav.open ul {
 }
 
 header nav .child-toggle {
-    color: $light;
+    color: var(--accent);
     width: 2 * $spacing-l;
     text-align: center;
     background-color: #fff;
-    border-left: 1px solid $light;
+    border-left: 1px solid var(--light);
     appearance: none;
 
     &:focus {
@@ -331,13 +331,13 @@ header nav.open ul.open {
 }
 
 header nav.open > ul > li {
-    border-top: 1px solid $light;
+    border-top: 1px solid var(--light);
     position: relative;
 }
 
 
 header nav > ul > li:last-child {
-    border-bottom: 1px solid $light;
+    border-bottom: 1px solid var(--light);
     padding-bottom: -1px;
 }
 
@@ -348,7 +348,7 @@ header nav > ul ul li {
 
 header nav ul.open > li {
     height: auto;
-    border-top: 1px solid $light;
+    border-top: 1px solid var(--light);
     padding-top: -1px;
 }
 
@@ -386,11 +386,11 @@ header nav.open > ul > li > ul > li > ul > li > ul > li a {
 .sub-menu li {
     font-size: .75 * $base-font-size;
     font-weight: bold;
-    border-bottom: 1px solid $light;
+    border-bottom: 1px solid var(--light);
     padding: $spacing-s 0 ($spacing-s - 1px);
 
     &:first-of-type {
-        border-top: 1px solid $light;
+        border-top: 1px solid var(--light);
         padding-top: ($spacing-s - 1px);
     }
 }
@@ -438,7 +438,7 @@ nav.pagination {
 
 .pagination .inactive.button {
     opacity: .5;
-    color: $gray;
+    color: var(--gray);
     background-color: white;
 }
 
@@ -495,8 +495,8 @@ button.o-icon-search {
     display: flex;
     flex-wrap: nowrap;
     background-color: #fff;
-    border-bottom: 1px solid $light;
-    border-top: 1px solid $light;
+    border-bottom: 1px solid var(--light);
+    border-top: 1px solid var(--light);
     padding: $spacing-s $spacing-l;
 }
 
@@ -561,12 +561,6 @@ footer {
 
 .resource-list.preview + a {
     color: #000;
-  
-    &:hover {
-      background-color: $bold;
-      border-bottom-width: 0px;
-      color: #fff;
-    }
 }
 
 .spotlight {
@@ -596,7 +590,7 @@ footer {
 
     &:after {
         content: "";
-        background-color: $bold;
+        background-color: var(--bold);
         z-index: -1;
         position: absolute;
         left: -9999px;
@@ -624,7 +618,7 @@ footer {
     .resource-list.preview + a, 
     [type="submit"] {
         background-color: #ddd;
-        color: $bold;
+        color: var(--bold);
         font-weight: normal;
     }
 
@@ -650,7 +644,7 @@ footer {
         right: -9999px;
         top: 0;
         bottom: 0;
-        border: 1px solid $light;
+        border: 1px solid var(--light);
     }
 }
 
@@ -729,7 +723,7 @@ footer {
 
     a:link,
     a:visited {
-        color: $link;
+        color: var(--accent);
     }
 
     .resource {
@@ -737,7 +731,7 @@ footer {
         background-color: #fff;
         padding: $spacing-l;
         align-items: center;
-        border: 1px solid $light;
+        border: 1px solid var(--light);
         height: 100%;
     }
 
@@ -773,7 +767,7 @@ ul.resource-list {
 }
 
 ul.resource-list .resource {
-    border-bottom: 1px solid $light;
+    border-bottom: 1px solid var(--light);
     padding-bottom: ($spacing-l - 1px);
     margin: $spacing-l 0;
     overflow: hidden;
@@ -784,7 +778,7 @@ ul.resource-list .resource {
     }
 
     &:first-child {
-        border-top: 1px solid $light;
+        border-top: 1px solid var(--light);
         padding-top: ($spacing-l - 1px);
     }
 }
@@ -821,7 +815,7 @@ ul.resource-list .resource h4 {
 }
 
 .body-truncate-fade .dark-accent ul.resource-list .resource .description::after {
-    background: linear-gradient(to top, rgba($bold, 1), rgba($bold, 0));
+    background: linear-gradient(to top, rgba(var(--bold), 1), rgba(var(--bold), 0));
 }
 
 .body-truncate-ellipsis ul.resource-list .resource .description {
@@ -850,12 +844,12 @@ ul.resource-list .resource img ~ * {
 .filter-label,
 .filter-value {
     display: inline-block;
-    border: 1px solid $light;
+    border: 1px solid var(--light);
     padding: ($spacing-s - 1px);
 }
 
 .filter-label {
-    background-color: $light;
+    background-color: var(--light);
 }
 
 .browse-controls {
@@ -897,7 +891,7 @@ ul.resource-list .resource img ~ * {
 
 .collapse + .collapsible {
     display: block;
-    border-left: 3px solid $gray;
+    border-left: 3px solid var(--gray);
     padding: $spacing-s $spacing-l;
     margin: $spacing-m 0;
     width: 100%;
@@ -964,7 +958,7 @@ body.resource #content > h2:first-of-type + h3 {
 }
 
 .property .value .language {
-    background-color: lighten($gray, 15%);
+    background-color: var(--light);
     padding: 0 $spacing-s;
     font-size: .75 * $base-font-size;
     margin-right: $spacing-s;
@@ -993,7 +987,7 @@ body.resource #content > h2:first-of-type + h3 {
 #linked-resources caption {
     text-align: left;
     font-weight: bold;
-    border-bottom: 3px solid $gray;
+    border-bottom: 3px solid var(--gray);
     padding: $spacing-s $spacing-m ($spacing-s - 3px);
 }
 
@@ -1113,7 +1107,7 @@ body.resource #content > h2:first-of-type + h3 {
 .index.search .results ul li {
   margin-bottom: $spacing-s;
   padding-bottom: $spacing-s;
-  border-bottom: 1px solid $gray;
+  border-bottom: 1px solid var(--gray);
 }
 
 .items.search #search {
