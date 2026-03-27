@@ -871,13 +871,18 @@ ul.resource-list .resource img ~ * {
 
 /* @group ----- Show ----- */
 
+.expand,
+.collapse {
+    display: inline-block;
+    min-width: 24px;
+    min-height: 24px;
+    text-align: center;
+}
+
 .expand:after,
 .collapse:after {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    display: inline-block;
-    min-width: $base-line-height;
-    text-align: center;
 }
 
 .expand:after {
