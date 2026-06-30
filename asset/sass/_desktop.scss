@@ -15,6 +15,11 @@ td {
     border-bottom: 1px solid var(--gray);
 }
 
+.field {
+    flex-wrap: nowrap;
+    gap: $spacing-l;
+}
+
 .field .field-meta {
     width: 30%;
     align-self: flex-start;
@@ -22,11 +27,9 @@ td {
 
 .field .inputs {
     width: 70%;
-    padding-left: $spacing-l;
 }
 
 .field .value select {
-    width: initial;
     margin-bottom: 0;
 }
 

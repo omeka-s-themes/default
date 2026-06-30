@@ -125,11 +125,8 @@ select {
 
 .field {
     margin: $spacing-l 0;
-    display: -webkit-flex;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
+    align-items: flex-start;
     flex-wrap: wrap;
 }
 
@@ -143,16 +140,16 @@ select {
     width: 100%;
 }
 
-.field.multi-value .label,
-.field.multi-value .field-description {
-    margin-right: $spacing-s;
-}
-
 .field.required .field-meta:after {
     content: "\f069";
     font-family: "Font Awesome 5 Free";
     font-size: .75 * $base-font-size;
     font-weight: 900;
+}
+
+.field-meta label,
+.field-meta .label {
+    font-weight: bold;
 }
 
 .field .add-value {
@@ -168,6 +165,7 @@ select {
 
 .field-description {
     font-size: .75 * $base-font-size;
+    line-height: 1.5;
 }
 
 .field .inputs {
@@ -179,7 +177,6 @@ select {
 }
 
 .field .value select {
-    width: 100%;
     margin-bottom: $spacing-s;
 }
 
@@ -900,7 +897,7 @@ ul.resource-list .resource img ~ * {
 .collapse + .collapsible {
     display: block;
     border-left: 3px solid var(--gray);
-    padding: $spacing-s $spacing-l;
+    padding: 0 $spacing-m;
     margin: $spacing-m 0;
     width: 100%;
 }
@@ -1031,8 +1028,6 @@ body.resource #content > h2:first-of-type + h3 {
     align-items: center;
 }
 
-
-
 /* @end */
 
 /* @group ----- Advanced Search ----- */
@@ -1044,7 +1039,6 @@ body.resource #content > h2:first-of-type + h3 {
 .remove-value {
     position: relative;
     width: 1.5 * $spacing-l;
-    margin-left: $spacing-s;
 }
 
 /* @end */
