@@ -1036,10 +1036,15 @@ body.resource #content > h2:first-of-type + h3 {
     margin-bottom: $spacing-m;
 }
 
+#advanced-search .multi-value.field .field-meta { 
+    padding-right: 2.5 * $spacing-l;
+}
+
 .remove-value {
     position: relative;
     width: 1.5 * $spacing-l;
 }
+
 
 /* @end */
 
