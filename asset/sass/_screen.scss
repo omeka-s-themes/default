@@ -141,7 +141,7 @@ select {
 }
 
 .field.required .field-meta:after {
-    content: "\f069";
+    content: "\f069" / "";
     font-family: "Font Awesome 5 Free";
     font-size: .75 * $base-font-size;
     font-weight: 900;
@@ -242,7 +242,7 @@ header nav ul ul {
 
 #mobile-nav-toggle:before {
     font-family: "Font Awesome 5 Free";
-    content: "\f0c9";
+    content: "\f0c9" / "";
     font-weight: 900;
 }
 
@@ -251,7 +251,7 @@ header nav.open {
 }
 
 header nav.open #mobile-nav-toggle:before {
-    content: "\f00d";
+    content: "\f00d" / "";
 }
 
 header nav.open ul {
@@ -314,12 +314,12 @@ header nav .child-toggle {
     
     &:before {
         font-family: "Font Awesome 5 Free";
-        content: "\f105";
+        content: "\f105" / "";
         font-weight: 900;
     }
 
     &.open:before {
-        content: "\f107";
+        content: "\f107" / "";
     }
 }
 
@@ -355,7 +355,7 @@ header nav > ul > li > ul > li.active > a {
 }
 
 header nav > ul > li > ul > li.active > a:before {
-    content: ">";
+    content: ">" / "";
     display: inline-block;
     width: 1.5em;
 }
@@ -509,7 +509,7 @@ button.o-icon-search {
     border-radius: 0 3px 3px 0;
 
     &:before {
-        content: "\f002";
+        content: "\f002" / "";
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
         position: absolute;
@@ -883,11 +883,11 @@ ul.resource-list .resource img ~ * {
 }
 
 .expand:after {
-    content: "\f0da";
+    content: "\f0da" / "";
 }
 
 .collapse:after {
-    content: "\f0d7"
+    content: "\f0d7" / "";
 }
 
 .collapsible {
@@ -970,7 +970,7 @@ body.resource #content > h2:first-of-type + h3 {
 }
 
 .property .private:after {
-    content: "\f070";
+    content: "\f070" / "";
     font-family: "Font Awesome 5 Free";
     font-size: .75 * $base-font-size;
     font-weight: 900;
