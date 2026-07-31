@@ -149,7 +149,7 @@ select {
 
 .field-meta label,
 .field-meta .label {
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .field .add-value {
@@ -282,7 +282,7 @@ header nav.open ul {
     }
 
     li.active {
-        font-weight: bold;
+        font-weight: 700;
     }
     
     li.parent {
@@ -382,7 +382,7 @@ header nav.open > ul > li > ul > li > ul > li > ul > li a {
 
 .sub-menu li {
     font-size: .75 * $base-font-size;
-    font-weight: bold;
+    font-weight: 700;
     border-bottom: 1px solid var(--light);
     padding: $spacing-s 0 ($spacing-s - 1px);
 
@@ -597,7 +597,7 @@ footer {
     }
 
     a:link {
-        font-weight: bold;
+        font-weight: 700;
     }
     
     a:link, 
@@ -919,7 +919,7 @@ body.resource #content > h2:first-of-type + h3 {
 .property dt {
     margin-bottom: 0;
     font-size: .75 * $base-font-size;
-    font-weight: bold;
+    font-weight: 700;
 
     &:first-child {
         margin-top: 0;
@@ -991,7 +991,7 @@ body.resource #content > h2:first-of-type + h3 {
 
 #linked-resources caption {
     text-align: left;
-    font-weight: bold;
+    font-weight: 700;
     border-bottom: 3px solid var(--gray);
     padding: $spacing-s $spacing-m ($spacing-s - 3px);
 }
@@ -1061,7 +1061,7 @@ body.resource #content > h2:first-of-type + h3 {
 }
 
 .results .result-title {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .results > ul {
